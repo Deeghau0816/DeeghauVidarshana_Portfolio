@@ -1,0 +1,93 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global reset */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+/* Prevent image drag */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Button outline reset */
+button {
+  outline: none;
+}
+
+/* Button hover: "push up" */
+.btnLift {
+  transform: translateY(0);
+}
+.btnLift:hover {
+  transform: translateY(-6px);
+}
+.btnLift:active {
+  transform: translateY(-2px);
+}
+
+/* Typing cursor (calm) */
+.typingCursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.05em;
+  margin-left: 10px;
+  transform: translateY(3px);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  animation: blinkCursor 0.9s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* colors for Vidarshana name */
+.nameSoftGradient{
+  background: linear-gradient(90deg,
+    #2563eb 0%,
+    #06b6d4 60%,
+    #22c55e 110%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 0 12px 28px rgba(6, 182, 212, 0.16);
+}
+
+
+
+/* Soft highlights (calm) */
+.dsHighlight {
+  color: #ca1a1a;
+}
+.mlHighlight {
+  color: #0f2e8c;
+}
+.sysHighlight {
+  color: lab(31.01% 56.11 -0.67);
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .typingCursor {
+    animation: none;
+  }
+  .btnLift:hover {
+    transform: none;
+  }
+}
