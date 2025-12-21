@@ -240,7 +240,9 @@ function EduWideCard({
                     Stream Subjects
                   </div>
                   <p className="mt-1 text-sm text-slate-800">
-                    Combined Maths • Physics • Chemistry
+                    • Combined Mathematics <br></br>
+                    • Physics <br></br>
+                    • Chemistry
                   </p>
                 </div>
               )}

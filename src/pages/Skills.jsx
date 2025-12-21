@@ -7,7 +7,6 @@ import {
   LineChart,
   Brain,
   Sparkles,
-  CheckCircle2,
   Wrench,
   Users,
   MessageSquare,
@@ -15,7 +14,13 @@ import {
   CalendarCheck,
   Lightbulb,
   ShieldCheck,
+  Layers,       // ✅ for MERN
+  Server,       // ✅ for PHP
+  Braces,       // ✅ for Python/R style
 } from "lucide-react";
+
+// ✅ Only keep the two react-icons you actually need
+import { SiKotlin, SiJavascript } from "react-icons/si";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -56,59 +61,65 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* =========================
-            1) CORE SKILLS (MAIN)
-           ========================= */}
+        {/* CORE + LEVELS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Core skills (left / big) */}
+          {/* Core Skills */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-md shadow-sm"
           >
             <div className="p-6 md:p-8">
-              <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-                <ClipboardCheck className="h-5 w-5 text-slate-700" />
+              <h2 className="text-xl font-semibold text-blue-700 flex items-center gap-2">
+                <ClipboardCheck className="h-5 w-5 text-blue-700" />
                 Core Skills
               </h2>
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SkillGroup
-                  icon={<LineChart className="h-5 w-5 text-cyan-700" />}
                   title="EDA + Visualization"
                   items={[
                     "Pandas",
                     "NumPy",
-                    "Matplotlib/Plotly",
-                    "Insights + story",
+                    "Matplotlib / Plotly",
+                    "Insights + storytelling",
                   ]}
                 />
                 <SkillGroup
-                  icon={<Code2 className="h-5 w-5 text-indigo-700" />}
                   title="Python + Projects"
-                  items={["Clean code habits", "APIs to datasets", "Notebook → app"]}
+                  items={[
+                    "Clean code habits",
+                    "APIs to datasets",
+                    "Notebook → app",
+                  ]}
                 />
                 <SkillGroup
-                  icon={<Brain className="h-5 w-5 text-fuchsia-700" />}
                   title="ML Basics (Growing)"
-                  items={["Baselines", "Train/test thinking", "Evaluation practice"]}
+                  items={[
+                    "Baselines",
+                    "Train / test thinking",
+                    "Evaluation practice",
+                  ]}
                 />
                 <SkillGroup
-                  icon={<Database className="h-5 w-5 text-amber-700" />}
                   title="Data Engineering (Learning)"
-                  items={["SQL improving", "Pipelines mindset", "Structured storage"]}
+                  items={[
+                    "SQL improving",
+                    "Pipelines mindset",
+                    "Structured storage",
+                  ]}
                 />
               </div>
 
-              <div className="mt-8 rounded-2xl border border-slate-200 bg-white/65 p-5 backdrop-blur-md">
-                <p className="font-semibold text-slate-900 flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-slate-700" />
+              <div className="mt-8 rounded-2xl border border-slate-200 bg-white/65 p-5">
+                <p className="font-semibold text-blue-700 flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-blue-700" />
                   Note
                 </p>
-                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                <p className="mt-2 text-sm text-slate-700">
                   Data Science is my main path. I’m building skills through real
                   projects and improving week by week.
                 </p>
@@ -116,17 +127,17 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* Skill levels (right / like before) */}
+          {/* Skill Levels + Languages */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-md shadow-sm"
           >
             <div className="p-6 md:p-8">
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-lg font-semibold text-teal-700">
                 Skill levels (self-estimate)
               </h3>
 
@@ -134,88 +145,78 @@ export default function Skills() {
                 <SkillBar label="EDA + Visualization" value={82} />
                 <SkillBar label="Dashboards / Reporting" value={74} />
                 <SkillBar label="Python + Data Handling" value={78} />
-                <SkillBar label="ML Basics (Growing)" value={66} />
-                <SkillBar label="Data Engineering (Learning)" value={58} />
+                <SkillBar label="ML Basics" value={66} />
+                <SkillBar label="Data Engineering" value={58} />
+              </div>
+
+              {/* Languages */}
+              <div className="mt-6 rounded-2xl border border-slate-200 bg-white/65 p-4">
+                <p className="text-sm font-semibold text-red-600 mb-3">
+                  Languages & Stacks
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {/* ✅ Your exact list with icons (no site crash) */}
+                  <LangPill
+                    icon={<Layers className="h-4 w-4 text-indigo-700" />}
+                    label="MERN"
+                  />
+                  <LangPill
+                    icon={<Server className="h-4 w-4 text-purple-700" />}
+                    label="PHP"
+                  />
+                  <LangPill
+                    icon={<Code2 className="h-4 w-4 text-amber-700" />}
+                    label="Java"
+                  />
+                  <LangPill
+                    icon={<Braces className="h-4 w-4 text-cyan-700" />}
+                    label="Python"
+                  />
+                  <LangPill
+                    icon={<Braces className="h-4 w-4 text-rose-700" />}
+                    label="R"
+                  />
+                  <LangPill
+                    icon={<Database className="h-4 w-4 text-emerald-700" />}
+                    label="SQL"
+                  />
+
+                  {/* ✅ Added like your screenshot style */}
+                  <LangPill
+                    icon={<SiKotlin className="h-4 w-4 text-violet-700" />}
+                    label="Kotlin"
+                  />
+                  <LangPill
+                    icon={<SiJavascript className="h-4 w-4 text-yellow-500" />}
+                    label="JavaScript"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* =========================
-            2) TOOLS (MAIN)
-           ========================= */}
+        {/* SOFT SKILLS */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="mt-6 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-md shadow-sm"
         >
           <div className="p-6 md:p-8">
-            <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-              <Wrench className="h-5 w-5 text-slate-700" />
-              Tools I use
+            <h2 className="text-xl font-semibold text-orange-600">
+              Soft skills
             </h2>
-            <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-              Databases, IDEs, analytics tools, and platforms I work with.
-            </p>
-
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Databases */}
-              <div className="rounded-2xl border border-slate-200 bg-white/65 p-5 backdrop-blur-md">
-                <p className="text-sm font-semibold text-slate-900 flex items-center gap-2">
-                  <Database className="h-4 w-4 text-amber-700" />
-                  Databases
-                </p>
-                <ul className="mt-3 space-y-2">
-                  <ListItem>MySQL</ListItem>
-                  <ListItem>Microsoft SQL Server</ListItem>
-                  <ListItem>MongoDB</ListItem>
-                  <ListItem>PostgreSQL</ListItem>
-                </ul>
-              </div>
-
-              {/* Tools & Platforms */}
-              <div className="rounded-2xl border border-slate-200 bg-white/65 p-5 backdrop-blur-md">
-                <p className="text-sm font-semibold text-slate-900 flex items-center gap-2">
-                  <Code2 className="h-4 w-4 text-indigo-700" />
-                  Tools & Platforms
-                </p>
-                <ul className="mt-3 space-y-2">
-                  <ListItem>VS Code</ListItem>
-                  <ListItem>Jupyter Notebook</ListItem>
-                  <ListItem>Tableau</ListItem>
-                  <ListItem>Power BI</ListItem>
-                  <ListItem>Eclipse IDE</ListItem>
-                  <ListItem>IntelliJ IDEA</ListItem>
-                  <ListItem>Postman</ListItem>
-                  <ListItem>Git</ListItem>
-                  <ListItem>GitHub</ListItem>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* =========================
-            3) SOFT SKILLS (MAIN)
-           ========================= */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="mt-6 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-md shadow-sm"
-        >
-          <div className="p-6 md:p-8">
-            <h2 className="text-xl font-semibold text-slate-900">Soft skills</h2>
-            <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-              How I work with people, deadlines, and real projects.
-            </p>
 
             <div className="mt-5 space-y-4">
+              <SoftSkillLine
+                icon={<ShieldCheck className="h-4 w-4 text-indigo-700" />}
+                title="Leadership"
+                desc="Guide teams, take ownership of decisions, and ensure goals are achieved."
+              />
               <SoftSkillLine
                 icon={<Users className="h-4 w-4 text-indigo-700" />}
                 title="Team collaboration"
@@ -224,27 +225,27 @@ export default function Skills() {
               <SoftSkillLine
                 icon={<MessageSquare className="h-4 w-4 text-cyan-700" />}
                 title="Clear communication"
-                desc="Explain work simply, ask the right questions, and update often."
+                desc="Explain work simply and clearly."
               />
               <SoftSkillLine
                 icon={<Target className="h-4 w-4 text-fuchsia-700" />}
                 title="Problem solving"
-                desc="Break tasks down, test quickly, and iterate to a solution."
+                desc="Break problems down and iterate."
               />
               <SoftSkillLine
                 icon={<CalendarCheck className="h-4 w-4 text-amber-700" />}
                 title="Time management"
-                desc="Prioritize the important parts and deliver on deadlines."
+                desc="Deliver work on deadlines."
               />
               <SoftSkillLine
                 icon={<Lightbulb className="h-4 w-4 text-emerald-700" />}
-                title="Fast learning mindset"
-                desc="Learn by building, reading docs, and practicing weekly."
+                title="Fast learner"
+                desc="Learn by building and experimenting."
               />
               <SoftSkillLine
-                icon={<ShieldCheck className="h-4 w-4 text-slate-700" />}
-                title="Ownership & reliability"
-                desc="Take responsibility and finish what I start."
+                icon={<Brain className="h-4 w-4 text-slate-700" />}
+                title="Ownership"
+                desc="Take responsibility and finish tasks."
               />
             </div>
           </div>
@@ -254,50 +255,17 @@ export default function Skills() {
   );
 }
 
-function SkillGroup({ icon, title, items }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4 backdrop-blur-md">
-      <div className="flex items-start gap-3">
-        <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-sm">
-          {icon}
-        </div>
-        <div className="flex-1">
-          <p className="font-semibold text-slate-900">{title}</p>
-          <ul className="mt-2 space-y-1 text-sm text-slate-700">
-            {items.map((t, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900/60" />
-                {t}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-}
+/* ---------- Components ---------- */
 
-function ListItem({ children }) {
+function SkillGroup({ title, items }) {
   return (
-    <li className="flex items-center gap-2 text-sm text-slate-700">
-      <CheckCircle2 className="h-4 w-4 text-slate-700" />
-      <span>{children}</span>
-    </li>
-  );
-}
-
-function SoftSkillLine({ icon, title, desc }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4 backdrop-blur-md">
-      <div className="flex items-start gap-3">
-        <div className="mt-0.5 rounded-xl border border-slate-200 bg-white p-2 shadow-sm">
-          {icon}
-        </div>
-        <div className="flex-1">
-          <p className="font-semibold text-slate-900">{title}</p>
-          <p className="mt-2 text-sm text-slate-700 leading-relaxed">{desc}</p>
-        </div>
-      </div>
+    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4">
+      <p className="font-semibold text-slate-900">{title}</p>
+      <ul className="mt-2 space-y-1 text-sm text-slate-700">
+        {items.map((i, idx) => (
+          <li key={idx}>• {i}</li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -305,18 +273,41 @@ function SoftSkillLine({ icon, title, desc }) {
 function SkillBar({ label, value }) {
   return (
     <div>
-      <div className="flex items-center justify-between text-sm">
-        <span className="font-medium text-slate-800">{label}</span>
+      <div className="flex justify-between text-sm">
+        <span className="text-slate-800 font-medium">{label}</span>
         <span className="text-slate-500">{value}%</span>
       </div>
-      <div className="mt-2 h-2 w-full rounded-full bg-slate-200 overflow-hidden">
+      <div className="mt-2 h-2 rounded-full bg-slate-200 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${value}%` }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="h-full rounded-full bg-slate-900/80"
+          transition={{ duration: 0.9 }}
+          className="h-full rounded-full bg-slate-900"
         />
+      </div>
+    </div>
+  );
+}
+
+function LangPill({ icon, label }) {
+  return (
+    <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium shadow-sm text-slate-800">
+      <span className="text-lg leading-none">{icon}</span>
+      {label}
+    </div>
+  );
+}
+
+function SoftSkillLine({ icon, title, desc }) {
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4 flex gap-3">
+      <div className="p-2 border border-slate-200 rounded-xl bg-white">
+        {icon}
+      </div>
+      <div>
+        <p className="font-semibold text-slate-900">{title}</p>
+        <p className="text-sm text-slate-700 mt-1">{desc}</p>
       </div>
     </div>
   );

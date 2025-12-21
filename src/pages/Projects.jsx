@@ -10,8 +10,8 @@ const projects = [
     period: "2025",
     description:
       "District-based alerts, user registration, admin dashboards, and reporting for disaster notifications.",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
-    githubUrl: "https://github.com/yourusername/safezone",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
+    githubUrl: "https://github.com/Deeghau0816/SafeZone_DMS.git",
     isUni: true,
     badgeImg: "/sliit-badge.png",
   },
@@ -22,7 +22,7 @@ const projects = [
     description:
       "Streamlit dashboard with real-time fetching and ML-based next-candle prediction with intervals.",
     tags: ["Python", "Streamlit", "yfinance", "ML"],
-    githubUrl: "https://github.com/Deeghau0816/StockFlux",
+    githubUrl: "https://github.com/Deeghau0816/StockFlux.git",
     isUni: false,
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     description:
       "Android wellness tracker focusing on storing user wellness data with offline-first local storage.",
     tags: ["Kotlin", "Data Persistence", "Local Database", "Mobile App"],
-    githubUrl: "https://github.com/yourusername/welltrack",
+    githubUrl: "https://github.com/Deeghau0816/WellTrack_Mobile_Application.git",
     isUni: true,
     badgeImg: "/sliit-badge.png",
   },
@@ -43,7 +43,7 @@ const projects = [
     description:
       "Tourism mobile app with listings and features designed for Sri Lanka travel planning.",
     tags: ["Kotlin", "Android Studio", "Mobile App"],
-    githubUrl: "https://github.com/yourusername/travelmania",
+    githubUrl: "https://github.com/Deeghau0816/Travel-Mania-Android-UI.git",
     isUni: true,
     badgeImg: "/sliit-badge.png",
   },
@@ -54,21 +54,20 @@ const projects = [
     description:
       "Full-stack web platform for exploring Sri Lankan tourism with dynamic content and booking features.",
     tags: ["Java Servlets", "JSP", "MySQL", "HTML/CSS", "JavaScript"],
-    githubUrl: "https://github.com/yourusername/travelmania-web",
+    githubUrl: "https://github.com/Deeghau0816/Travel-mainia.git",
     isUni: true,
     badgeImg: "/sliit-badge.png",
   },
   {
-    title: "Online Pharmacy System",
-    subtitle: "E-commerce Web App",
-    period: "2024",
-    description:
-      "Online pharmacy system with product management, order processing, and secure checkout flow.",
-    tags: ["PHP", "MySQL", "Bootstrap", "jQuery", "HTML/CSS"],
-    githubUrl: "https://github.com/yourusername/online-pharmacy",
-    isUni: true,
-    badgeImg: "/sliit-badge.png",
-  },
+  title: "Online Pharmacy System",
+  subtitle: "E-commerce Web App",
+  period: "2024",
+  description:
+    "Online pharmacy system with product management, order processing, and secure checkout flow.",
+  tags: ["PHP", "MySQL", "jQuery", "HTML/CSS"],
+  isUni: true,
+  badgeImg: "/sliit-badge.png",
+},
 ];
 
 export default function Projects() {
@@ -105,11 +104,11 @@ export default function Projects() {
         viewport={{ once: true }}
       >
         <div className="text-left">
-          <p className="text-sm font-semibold tracking-wider text-slate-500">
+          <p className="text-sm font-medium tracking-wide text-slate-700">
             PROJECTS • SELECTED WORK
           </p>
 
-          <h2 className="mt-2 text-4xl sm:text-5xl font-extrabold text-slate-900">
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
             My <span className="text-violet-700">Projects</span> showcase
           </h2>
 

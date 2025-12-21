@@ -24,11 +24,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <p className="text-sm font-semibold tracking-widest text-slate-600">
+          <p className="text-sm font-medium tracking-wide text-slate-700">
             CONTACT • LET’S CONNECT
           </p>
 
-          <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
+          <h1 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
             Get in <span className="text-purple-600">Touch</span>
           </h1>
 

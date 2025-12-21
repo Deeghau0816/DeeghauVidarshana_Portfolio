@@ -21,7 +21,6 @@ export default function Navbar() {
       ]
     `;
 
-  // Close menu on route change (when a link is clicked)
   const handleLinkClick = () => setOpen(false);
 
   // Close menu on Esc
@@ -35,7 +34,18 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto max-w-6xl px-4 py-4">
+      {/* Click-outside overlay (BEHIND dropdown) */}
+      {open && (
+        <button
+          type="button"
+          aria-label="Close menu overlay"
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-30 md:hidden"
+          style={{ background: "transparent" }}
+        />
+      )}
+
+      <div className="mx-auto max-w-6xl px-4 py-4 relative z-50">
         <nav
           className="
             relative
@@ -48,20 +58,40 @@ export default function Navbar() {
           "
         >
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+          <NavLink
+            to="/"
+            className="flex items-center gap-2"
+            onClick={() => setOpen(false)}
+          >
             <div className="h-9 w-9 rounded-full bg-slate-100 shadow-md overflow-hidden">
-              <img src="/logo.jpg" alt="Logo" className="h-full w-full object-cover" />
+              <img
+                src="/logo.jpg"
+                alt="Logo"
+                className="h-full w-full object-cover"
+              />
             </div>
           </NavLink>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-2">
-            <NavLink to="/" className={linkClass}>Home</NavLink>
-            <NavLink to="/about" className={linkClass}>About</NavLink>
-            <NavLink to="/projects" className={linkClass}>Projects</NavLink>
-            <NavLink to="/education" className={linkClass}>Education</NavLink>
-            <NavLink to="/skills" className={linkClass}>Skills</NavLink>
-            <NavLink to="/contact" className={linkClass}>Contact</NavLink>
+            <NavLink to="/" className={linkClass}>
+              Home
+            </NavLink>
+            <NavLink to="/about" className={linkClass}>
+              About
+            </NavLink>
+            <NavLink to="/projects" className={linkClass}>
+              Projects
+            </NavLink>
+            <NavLink to="/education" className={linkClass}>
+              Education
+            </NavLink>
+            <NavLink to="/skills" className={linkClass}>
+              Skills
+            </NavLink>
+            <NavLink to="/contact" className={linkClass}>
+              Contact
+            </NavLink>
           </div>
 
           {/* Mobile Hamburger */}
@@ -82,7 +112,6 @@ export default function Navbar() {
               hover:bg-white
             "
           >
-            {/* Simple icon */}
             <div className="relative h-4 w-5">
               <span
                 className={`absolute left-0 top-0 h-[2px] w-5 bg-slate-700 transition ${
@@ -102,14 +131,19 @@ export default function Navbar() {
             </div>
           </button>
 
-          {/* Mobile Dropdown */}
+          {/* Mobile Dropdown (ABOVE overlay) */}
           <div
             className={`
               md:hidden
               absolute left-0 right-0 top-[calc(100%+10px)]
               px-2
+              z-50
               transition-all duration-300
-              ${open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}
+              ${
+                open
+                  ? "opacity-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 -translate-y-2 pointer-events-none"
+              }
             `}
           >
             <div
@@ -122,26 +156,48 @@ export default function Navbar() {
               "
             >
               <div className="grid gap-2">
-                <NavLink to="/" className={linkClass} onClick={handleLinkClick}>Home</NavLink>
-                <NavLink to="/about" className={linkClass} onClick={handleLinkClick}>About</NavLink>
-                <NavLink to="/projects" className={linkClass} onClick={handleLinkClick}>Projects</NavLink>
-                <NavLink to="/education" className={linkClass} onClick={handleLinkClick}>Education</NavLink>
-                <NavLink to="/skills" className={linkClass} onClick={handleLinkClick}>Skills</NavLink>
-                <NavLink to="/contact" className={linkClass} onClick={handleLinkClick}>Contact</NavLink>
+                <NavLink to="/" className={linkClass} onClick={handleLinkClick}>
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/about"
+                  className={linkClass}
+                  onClick={handleLinkClick}
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  to="/projects"
+                  className={linkClass}
+                  onClick={handleLinkClick}
+                >
+                  Projects
+                </NavLink>
+                <NavLink
+                  to="/education"
+                  className={linkClass}
+                  onClick={handleLinkClick}
+                >
+                  Education
+                </NavLink>
+                <NavLink
+                  to="/skills"
+                  className={linkClass}
+                  onClick={handleLinkClick}
+                >
+                  Skills
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  className={linkClass}
+                  onClick={handleLinkClick}
+                >
+                  Contact
+                </NavLink>
               </div>
             </div>
           </div>
         </nav>
-
-        {/* Optional: click-outside overlay to close */}
-        {open && (
-          <button
-            aria-label="Close menu overlay"
-            onClick={() => setOpen(false)}
-            className="fixed inset-0 z-40 md:hidden"
-            style={{ background: "transparent" }}
-          />
-        )}
       </div>
     </header>
   );

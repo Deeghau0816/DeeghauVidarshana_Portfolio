@@ -27,17 +27,15 @@ export default function ProjectCard({ project }) {
       <div className="pointer-events-none absolute -top-16 -right-16 h-44 w-44 rounded-full bg-indigo-400/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-16 -left-16 h-44 w-44 rounded-full bg-sky-400/10 blur-3xl" />
 
-      {/* ✅ TOP-RIGHT: Year + Uni badge together */}
+      {/* Top-right: year + uni badge */}
       <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
-        {/* year */}
-        {period ? (
+        {period && (
           <span className="rounded-full border border-slate-200 bg-white/90 px-3 py-1 text-xs font-semibold text-slate-600 shadow-sm">
             {period}
           </span>
-        ) : null}
+        )}
 
-        {/* uni badge */}
-        {isUni && badgeImg ? (
+        {isUni && badgeImg && (
           <div className="rounded-2xl bg-white/90 border border-slate-200 shadow-sm p-2">
             <img
               src={badgeImg}
@@ -46,25 +44,28 @@ export default function ProjectCard({ project }) {
               loading="lazy"
             />
           </div>
-        ) : null}
+        )}
       </div>
 
-      <div className="relative p-7">
-        {/* top row (REMOVE the year span from here now) */}
-        <div className="flex items-start justify-between gap-4">
-          <div className="pr-16">
-            <h3 className="text-xl font-extrabold text-slate-900">{title}</h3>
+      {/* Card body */}
+      <div className="relative p-7 flex h-full flex-col">
+        {/* Title */}
+        <div className="pr-16">
+          <h3 className="text-xl font-extrabold text-slate-900">
+            {title}
+          </h3>
 
-            <p className="mt-1 text-sm font-semibold bg-gradient-to-r from-indigo-700 to-sky-700 bg-clip-text text-transparent">
-              {subtitle}
-            </p>
-          </div>
+          <p className="mt-1 text-sm font-semibold bg-gradient-to-r from-indigo-700 to-sky-700 bg-clip-text text-transparent">
+            {subtitle}
+          </p>
         </div>
 
+        {/* Description */}
         <p className="mt-4 text-sm leading-relaxed text-slate-600">
           {description}
         </p>
 
+        {/* Tags */}
         <div className="mt-5 flex flex-wrap gap-2">
           {tags.map((t) => (
             <span
@@ -80,19 +81,21 @@ export default function ProjectCard({ project }) {
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-3">
-          {githubUrl ? (
+        {/* Footer (GitHub button aligned across cards) */}
+        <div className="mt-auto pt-6">
+          {githubUrl && (
             <a
               href={githubUrl}
               target="_blank"
               rel="noreferrer"
               className="
                 inline-flex items-center gap-2
-                rounded-2xl border border-slate-300
-                bg-white px-4 py-2.5
-                text-sm font-semibold text-slate-800
-                shadow-sm transition-all duration-300
-                hover:bg-slate-50 hover:border-slate-400
+                rounded-2xl
+                bg-indigo-700 px-4 py-2.5
+                text-sm font-semibold text-white
+                shadow-[0_10px_25px_rgba(79,70,229,0.35)]
+                transition-all duration-300
+                hover:bg-indigo-800 hover:shadow-[0_14px_35px_rgba(79,70,229,0.45)]
               "
             >
               <Github size={18} />
@@ -102,10 +105,6 @@ export default function ProjectCard({ project }) {
                 className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
-          ) : (
-            <span className="text-sm font-semibold text-slate-500">
-              Private repo
-            </span>
           )}
         </div>
       </div>

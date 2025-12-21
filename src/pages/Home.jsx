@@ -31,13 +31,13 @@ export default function Home() {
       {/* same background system */}
       <PageBackground />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 grid lg:grid-cols-2 gap-14 items-center">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 grid lg:grid-cols-2 gap-14 items-center text-sm">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.05]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.05]">
             <span className="block">
               {line1}
               {!hasBreak && <span className="typingCursor" aria-hidden="true" />}
@@ -49,7 +49,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">
+          <p className="mt-6 text-base text-slate-600 max-w-xl leading-relaxed">
             <span className="font-semibold text-slate-800">
               Third-year IT Undergraduate
             </span>{" "}
@@ -71,7 +71,7 @@ export default function Home() {
   className="
     btnLift
     group flex items-center gap-3
-    rounded-2xl px-8 py-3.5
+    rounded-xl px-6 py-2.5
     bg-emerald-500 text-white font-semibold
     shadow-[0_12px_30px_rgba(16,185,129,0.14)]
     transition-all duration-300
@@ -93,7 +93,7 @@ export default function Home() {
     className="
       btnLift
       flex items-center gap-3
-      rounded-2xl px-8 py-3.5
+      rounded-xl px-6 py-2.5
       bg-white/70 text-indigo-700 font-semibold
       border border-indigo-500/25
       shadow-[0_12px_28px_rgba(15,23,42,0.08)]
@@ -113,7 +113,7 @@ export default function Home() {
     className="
       btnLift
       inline-flex items-center gap-3
-      rounded-2xl px-8 py-3.5
+      rounded-xl px-6 py-2.5
       bg-white/70 text-rose-600 font-semibold
       border border-rose-400/30
       shadow-[0_12px_28px_rgba(15,23,42,0.08)]
@@ -138,8 +138,8 @@ export default function Home() {
           <div
             className="
               w-full
-              max-w-[420px] sm:max-w-[520px] lg:max-w-[480px]
-              h-[500px] sm:h-[460px] lg:h-[600px]
+              max-w-[420px] sm:max-w-[520px] lg:max-w-[420px]
+              h-[500px] sm:h-[460px] lg:h-[520px]
               overflow-hidden
               rounded-3xl
               shadow-[0_22px_60px_rgba(15,23,42,0.16)]
