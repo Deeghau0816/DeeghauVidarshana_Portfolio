@@ -70,21 +70,22 @@ export default function About() {
           </h1>
 
           <p className="mt-4 max-w-3xl text-slate-700 leading-relaxed">
-            I’m an IT Undergraduate focused on{" "}
+            I’m an IT undergraduate specializing in{" "}
             <span className="font-medium text-slate-900">Data Science</span>.
-            Right now I’m strengthening my foundations through coursework and
-            hands on projects especially in{" "}
-            <span className="font-medium text-slate-900">EDA</span>,{" "}
-            <span className="font-medium text-slate-900">visualization</span>,{" "}
-            <span className="font-medium text-slate-900">basic modeling</span>,
+            focused on building practical, data-driven systems. 
+            I strengthen my foundations through hands-on projects in{" "}
+            <span className="font-medium text-slate-900">Exploratory Data Analysis (EDA)</span>,{" "}
+            <span className="font-medium text-slate-900">Visualization</span>,{" "}
+            <span className="font-medium text-slate-900">Predictive modeling</span>,
             and{" "}
-            <span className="font-medium text-slate-900">dashboarding</span>.
+            <span className="font-medium text-slate-900">Dashboard development</span>.
             <br />
-            I’m also learning{" "}
-            <span className="font-medium text-slate-900">
-              Data Engineering basics
-            </span>{" "}
-            (how to structure, collect, and manage data properly)
+            I actively work with real-world datasets to understand patterns, 
+            engineer features, and apply machine learning techniques. 
+            Alongside analytics, I’m developing strong data engineering fundamentals — learning 
+            how to structure, manage, and prepare data efficiently for scalable solutions.
+            <br />
+            My goal is to bridge analytics and engineering to build impactful, intelligent systems.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-700">
@@ -117,12 +118,17 @@ export default function About() {
             <RoleChip
               tone="strong"
               icon={<Brain className="h-4 w-4" />}
-              text="Junior Data Science (Intern)"
+              text="Data Science Intern"
             />
             <RoleChip
               tone="learning"
               icon={<Database className="h-4 w-4" />}
-              text="Data Engineering (Learning)"
+              text="Data Engineering Intern"
+            />
+            <RoleChip
+              tone="learning"
+              icon={<Database className="h-4 w-4" />}
+              text="Cloud + Big Data Basics"
             />
           </div>
         </motion.div>
@@ -362,15 +368,15 @@ export default function About() {
               <p className="mt-2 text-slate-700">
                 I’m mainly targeting{" "}
                 <span className="font-medium text-slate-900">
-                  Data Analyst / BI
+                  Data Analyst, Data Science
                 </span>{" "}
-                internships, and I’m also building towards{" "}
+                and 
                 <span className="font-medium text-slate-900">
-                  Junior Data Science
+                  Data Engineering Internships, 
                 </span>{" "}
-                roles while learning{" "}
+                and I’m also building towards roles while learning{" "}
                 <span className="font-medium text-slate-900">
-                  Data Engineering fundamentals
+                  Cloud Computing fundamentals
                 </span>
                 .
               </p>
