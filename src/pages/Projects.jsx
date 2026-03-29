@@ -5,6 +5,17 @@ import PageBackground from "../Components/Pagebackground";
 
 const projects = [
   {
+    title: "DWBI - DataWarehouse project",
+    subtitle: "Retail Orders Data Warehouse & BI Solution",
+    period: "2026 March",
+    description:
+      "Designed and implemented a retail data warehouse solution using SQL Server and SSIS by integrating data from CSV, Excel, and TXT sources into staging, dimension, and fact tables to support ETL processing, analytics, and reporting.",
+    tags: ["SQL Server", "SSIS", "SSMS", "ETL", "Business Intelligence"],
+    githubUrl: "https://github.com/Deeghau0816/DWBI-Data-Warehouse-Project.git",
+    isUni: true,
+    badgeImg: "/sliit-badge.png",
+  },
+  {
     title: "SafeZone",
     subtitle: "Disaster Management System",
     period: "2025",
