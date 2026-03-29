@@ -5,7 +5,7 @@ import PageBackground from "../Components/Pagebackground";
 
 const projects = [
   {
-    title: "DWBI - DataWarehouse project",
+    title: "DataWarehouse project",
     subtitle: "Retail Orders Data Warehouse & BI Solution",
     period: "2026 March",
     description:
