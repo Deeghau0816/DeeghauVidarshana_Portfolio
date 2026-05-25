@@ -4,22 +4,19 @@ import {
   ClipboardCheck,
   Code2,
   Database,
-  LineChart,
   Brain,
   Sparkles,
-  Wrench,
   Users,
   MessageSquare,
   Target,
   CalendarCheck,
   Lightbulb,
   ShieldCheck,
-  Layers,       // ✅ for MERN
-  Server,       // ✅ for PHP
-  Braces,       // ✅ for Python/R style
+  Layers,
+  Server,
+  Braces,
 } from "lucide-react";
 
-// ✅ Only keep the two react-icons you actually need
 import { SiKotlin, SiJavascript } from "react-icons/si";
 
 const fadeUp = {
@@ -88,6 +85,7 @@ export default function Skills() {
                     "Insights + storytelling",
                   ]}
                 />
+
                 <SkillGroup
                   title="Python + Projects"
                   items={[
@@ -96,6 +94,7 @@ export default function Skills() {
                     "Notebook → app",
                   ]}
                 />
+
                 <SkillGroup
                   title="ML Basics (Growing)"
                   items={[
@@ -104,6 +103,7 @@ export default function Skills() {
                     "Evaluation practice",
                   ]}
                 />
+
                 <SkillGroup
                   title="Data Engineering (Learning)"
                   items={[
@@ -119,6 +119,7 @@ export default function Skills() {
                   <Sparkles className="h-4 w-4 text-blue-700" />
                   Note
                 </p>
+
                 <p className="mt-2 text-sm text-slate-700">
                   Data Science is my main path. I’m building skills through real
                   projects and improving week by week.
@@ -156,37 +157,41 @@ export default function Skills() {
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  {/* ✅ Your exact list with icons (no site crash) */}
                   <LangPill
                     icon={<Layers className="h-4 w-4 text-indigo-700" />}
                     label="MERN"
                   />
+
                   <LangPill
                     icon={<Server className="h-4 w-4 text-purple-700" />}
                     label="PHP"
                   />
+
                   <LangPill
                     icon={<Code2 className="h-4 w-4 text-amber-700" />}
                     label="Java"
                   />
+
                   <LangPill
                     icon={<Braces className="h-4 w-4 text-cyan-700" />}
                     label="Python"
                   />
+
                   <LangPill
                     icon={<Braces className="h-4 w-4 text-rose-700" />}
                     label="R"
                   />
+
                   <LangPill
                     icon={<Database className="h-4 w-4 text-emerald-700" />}
                     label="SQL"
                   />
 
-                  {/* ✅ Added like your screenshot style */}
                   <LangPill
                     icon={<SiKotlin className="h-4 w-4 text-violet-700" />}
                     label="Kotlin"
                   />
+
                   <LangPill
                     icon={<SiJavascript className="h-4 w-4 text-yellow-500" />}
                     label="JavaScript"
@@ -211,42 +216,74 @@ export default function Skills() {
               Soft skills
             </h2>
 
-            <div className="mt-5 space-y-4">
-              <SoftSkillLine
-                icon={<ShieldCheck className="h-4 w-4 text-indigo-700" />}
-                title="Leadership"
-                desc="Guide teams, take ownership of decisions, and ensure goals are achieved."
-              />
-              <SoftSkillLine
-                icon={<Users className="h-4 w-4 text-indigo-700" />}
-                title="Team collaboration"
-                desc="Support teammates, share progress, and stay aligned."
-              />
-              <SoftSkillLine
-                icon={<MessageSquare className="h-4 w-4 text-cyan-700" />}
-                title="Clear communication"
-                desc="Explain work simply and clearly."
-              />
-              <SoftSkillLine
-                icon={<Target className="h-4 w-4 text-fuchsia-700" />}
-                title="Problem solving"
-                desc="Break problems down and iterate."
-              />
-              <SoftSkillLine
-                icon={<CalendarCheck className="h-4 w-4 text-amber-700" />}
-                title="Time management"
-                desc="Deliver work on deadlines."
-              />
-              <SoftSkillLine
-                icon={<Lightbulb className="h-4 w-4 text-emerald-700" />}
-                title="Fast learner"
-                desc="Learn by building and experimenting."
-              />
-              <SoftSkillLine
-                icon={<Brain className="h-4 w-4 text-slate-700" />}
-                title="Ownership"
-                desc="Take responsibility and finish tasks."
-              />
+            <div className="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Soft skills list */}
+              <div className="space-y-4">
+                <SoftSkillLine
+                  icon={<ShieldCheck className="h-4 w-4 text-indigo-700" />}
+                  title="Leadership"
+                  desc="Guide teams, take ownership of decisions, and ensure goals are achieved."
+                />
+
+                <SoftSkillLine
+                  icon={<Users className="h-4 w-4 text-indigo-700" />}
+                  title="Team collaboration"
+                  desc="Support teammates, share progress, and stay aligned."
+                />
+
+                <SoftSkillLine
+                  icon={<MessageSquare className="h-4 w-4 text-cyan-700" />}
+                  title="Clear communication"
+                  desc="Explain work simply and clearly."
+                />
+
+                <SoftSkillLine
+                  icon={<Target className="h-4 w-4 text-fuchsia-700" />}
+                  title="Problem solving"
+                  desc="Break problems down and iterate."
+                />
+
+                <SoftSkillLine
+                  icon={<CalendarCheck className="h-4 w-4 text-amber-700" />}
+                  title="Time management"
+                  desc="Deliver work on deadlines."
+                />
+
+                <SoftSkillLine
+                  icon={<Lightbulb className="h-4 w-4 text-emerald-700" />}
+                  title="Fast learner"
+                  desc="Learn by building and experimenting."
+                />
+
+                <SoftSkillLine
+                  icon={<Brain className="h-4 w-4 text-slate-700" />}
+                  title="Ownership"
+                  desc="Take responsibility and finish tasks."
+                />
+              </div>
+
+              {/* Talent image */}
+              <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm min-h-[570px]">
+                <img
+                  src="/talent.jpeg"
+                  alt="My talent and creative skills"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="rounded-2xl bg-white/85 backdrop-blur-md border border-white/70 p-4 shadow-sm">
+                    <p className="text-sm font-semibold text-slate-900">
+                      Creativity beyond coding
+                    </p>
+                    <p className="mt-1 text-xs text-slate-700">
+                      Media work, event involvement, leadership, and creative
+                      thinking strengthen how I work with people and projects.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -261,6 +298,7 @@ function SkillGroup({ title, items }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white/65 p-4">
       <p className="font-semibold text-slate-900">{title}</p>
+
       <ul className="mt-2 space-y-1 text-sm text-slate-700">
         {items.map((i, idx) => (
           <li key={idx}>• {i}</li>
@@ -277,6 +315,7 @@ function SkillBar({ label, value }) {
         <span className="text-slate-800 font-medium">{label}</span>
         <span className="text-slate-500">{value}%</span>
       </div>
+
       <div className="mt-2 h-2 rounded-full bg-slate-200 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
@@ -305,6 +344,7 @@ function SoftSkillLine({ icon, title, desc }) {
       <div className="p-2 border border-slate-200 rounded-xl bg-white">
         {icon}
       </div>
+
       <div>
         <p className="font-semibold text-slate-900">{title}</p>
         <p className="text-sm text-slate-700 mt-1">{desc}</p>
