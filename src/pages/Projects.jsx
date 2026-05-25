@@ -5,11 +5,22 @@ import PageBackground from "../Components/Pagebackground";
 
 const projects = [
   {
+    title: "UniPulse",
+    subtitle: "University Social Platform",
+    period: "2026",
+    description:
+    "A university-focused social platform with Authentication, Role-based access, Notifications, Role request management, and OAuth login improvements to support students, academics, and admins.",
+    tags: ["Spring Boot", "TypeScript", "MySQL", "JWT", "OAuth", "Role Management"],
+    githubUrl: "https://github.com/Deeghau0816/IT3030-paf-2026-smart-campus-Y3S1-WE-120.git",
+    isUni: true,
+    badgeImg: "/sliit-badge.png",
+  },
+  {
     title: "DataWarehouse project",
     subtitle: "Retail Orders Data Warehouse & BI Solution",
     period: "2026 March",
     description:
-      "Designed and implemented a retail data warehouse solution using SQL Server and SSIS by integrating data from CSV, Excel, and TXT sources into staging, dimension, and fact tables to support ETL processing, analytics, and reporting.",
+      "Designed and implemented a retail data warehouse solution using SQL Server and SSIS by integrating data from many sources to support ETL processing, analytics, and reporting.",
     tags: ["SQL Server", "SSIS", "SSMS", "ETL", "Business Intelligence"],
     githubUrl: "https://github.com/Deeghau0816/DWBI-Data-Warehouse-Project.git",
     isUni: true,
