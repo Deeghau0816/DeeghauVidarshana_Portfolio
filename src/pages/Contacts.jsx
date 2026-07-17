@@ -164,9 +164,8 @@ export default function Contact() {
             <div className="mt-6 rounded-xl bg-white/70 p-6 backdrop-blur-md ring-1 ring-slate-200">
               <h3 className="text-xl font-bold text-slate-900">Let’s Connect!</h3>
               <p className="mt-2 text-slate-700 leading-relaxed">
-                If you’re hiring for a Data Science Internship or need help
-                building a project, I’d love to chat. Let’s make something
-                impactful.
+                I’m a Data Analyst passionate about turning data into meaningful insights, 
+                and I’m always open to learning, collaborating, and exploring new opportunities.
               </p>
               <div className="mt-4 h-1 w-16 rounded-full bg-cyan-700" />
             </div>
