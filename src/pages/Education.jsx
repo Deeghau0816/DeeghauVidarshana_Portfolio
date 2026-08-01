@@ -8,9 +8,7 @@ import {
   CalendarDays,
   MapPin,
   Layers3,
-  Database,
   Award,
-  Cloud,
 } from "lucide-react";
 
 const fadeUp = {
@@ -63,6 +61,7 @@ export default function Education() {
             batchValue="Present"
             location="Sri Lanka"
             logoSrc="/sliit-badge.png"
+            logoPadding="p-1"
             points={[
               "Focused on Data Science learning path",
               "Building skills through coursework and projects",
@@ -83,6 +82,7 @@ export default function Education() {
             batchValue="Completed"
             location="Colombo"
             logoSrc="/AqcLogo.png"
+            logoPadding="p-1"
             points={[
               "Improved communication and writing skills",
               "Built confidence in clear presentations",
@@ -109,6 +109,7 @@ export default function Education() {
             batchValue="2022 (Jan 2023)"
             location="Kandana"
             logoSrc="/dmcLogo.png"
+            logoPadding="p-1"
             points={["Combined Mathematics", "Physics", "Chemistry"]}
             tags={["Combined Maths", "Physics", "Chemistry"]}
           />
@@ -153,13 +154,14 @@ export default function Education() {
             delay={0}
             badgeMain="Completed"
             badgeSide="Certification"
-            icon={<Cloud className="h-5 w-5 text-slate-800" />}
+            icon={null}
             title="AWS SimuLearn: Computing Solutions"
             subtitle="AWS Training & Certification"
             batchTitle="Completed On"
             batchValue="01 Aug 2026"
             location="Online"
-            logoSrc=""
+            logoSrc="/Icons/aws icon.png"
+            logoPadding="p-2"
             certificateImage="/Certificates/AWS computing solutions.png"
             certificateLink="/Certificates/AWS computing solutions.png"
             certificateFit="contain"
@@ -182,13 +184,14 @@ export default function Education() {
             delay={0.05}
             badgeMain="Completed"
             badgeSide="Certification"
-            icon={<Database className="h-5 w-5 text-slate-800" />}
+            icon={null}
             title="MongoDB Atlas Administrator Path"
             subtitle="Proof of Completion — MongoDB"
             batchTitle="Completed On"
             batchValue="05 Feb 2026"
             location="Online"
-            logoSrc=""
+            logoSrc="/Icons/mongo logo.png"
+            logoPadding="p-2"
             certificateImage="/Certificates/mongodbCertificate.jpg"
             certificateLink="/Certificates/mongodbCertificate.jpg"
             certificateFit="cover"
@@ -220,6 +223,7 @@ function EduWideCard({
   points = [],
   tags = [],
   logoSrc,
+  logoPadding = "p-2",
   certificateImage,
   certificateLink,
   certificateFit = "cover",
@@ -272,30 +276,34 @@ function EduWideCard({
           </span>
         </div>
 
-        {/* Content grid */}
+        {/* Main content grid */}
         <div className="mt-5 grid grid-cols-1 items-start gap-6 lg:grid-cols-3">
           {/* Left content */}
           <div className="lg:col-span-2">
-            <div className="flex items-start gap-3">
-              {/* Logo with fallback icon */}
-              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div className="absolute inset-0 grid place-items-center">
-                  {icon}
-                </div>
-
-                {logoSrc && (
+            <div className="flex items-start gap-4">
+              {/* Brand logo or fallback icon */}
+              <div
+                className={`
+                  flex h-16 w-16 shrink-0 items-center justify-center
+                  overflow-hidden rounded-2xl border border-slate-200
+                  bg-white shadow-sm ${logoPadding}
+                `}
+              >
+                {logoSrc ? (
                   <img
                     src={logoSrc}
                     alt={`${title} logo`}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     onError={(event) => {
                       event.currentTarget.style.display = "none";
                     }}
                   />
+                ) : (
+                  icon
                 )}
               </div>
 
-              <div className="min-w-0">
+              <div className="min-w-0 pt-1">
                 <h3 className="text-xl font-semibold leading-snug text-slate-900">
                   {title}
                 </h3>
@@ -349,7 +357,11 @@ function EduWideCard({
                   href={certificateLink || certificateImage}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 block overflow-hidden rounded-xl border border-slate-200 bg-white/80 transition hover:shadow-md"
+                  className="
+                    mt-4 block overflow-hidden rounded-xl border
+                    border-slate-200 bg-white/80 transition
+                    hover:shadow-md
+                  "
                 >
                   <img
                     src={certificateImage}
