@@ -10,6 +10,7 @@ import {
   Layers3,
   Database,
   Award,
+  Cloud,
 } from "lucide-react";
 
 const fadeUp = {
@@ -21,7 +22,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative min-h-screen scroll-mt-28 pt-24 pb-16 overflow-hidden"
+      className="relative min-h-screen scroll-mt-28 overflow-hidden pt-24 pb-16"
     >
       <PageBackground />
 
@@ -38,11 +39,11 @@ export default function Education() {
             EDUCATION • ACADEMIC JOURNEY
           </p>
 
-          <h1 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             My <span className="text-violet-700">Education</span> timeline
           </h1>
 
-          <p className="mt-4 max-w-4xl text-slate-700 leading-relaxed">
+          <p className="mt-4 max-w-4xl leading-relaxed text-slate-700">
             One by one, here’s my academic background, where I studied, what I
             completed, and what I’m currently doing.
           </p>
@@ -64,7 +65,7 @@ export default function Education() {
             logoSrc="/sliit-badge.png"
             points={[
               "Focused on Data Science learning path",
-              "Building skills through coursework + projects",
+              "Building skills through coursework and projects",
               "Improving step-by-step with real practice",
             ]}
             tags={["Data Science", "Projects", "Learning"]}
@@ -96,7 +97,7 @@ export default function Education() {
             ]}
           />
 
-          {/* A/L */}
+          {/* Advanced Level */}
           <EduWideCard
             delay={0.1}
             badgeMain="A/L"
@@ -113,7 +114,7 @@ export default function Education() {
           />
         </div>
 
-        {/* Certificates sub topic */}
+        {/* Certificates heading */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -132,23 +133,53 @@ export default function Education() {
                 CERTIFICATIONS • ONLINE LEARNING
               </p>
 
-              <h2 className="mt-1 text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
+              <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
                 My <span className="text-violet-700">Certificates</span>
               </h2>
             </div>
           </div>
 
-          <p className="mt-4 max-w-4xl text-slate-700 leading-relaxed">
+          <p className="mt-4 max-w-4xl leading-relaxed text-slate-700">
             Professional certificates and online learning achievements that
             support my technical growth in databases, cloud platforms, data
             science, and modern application development.
           </p>
         </motion.div>
 
-        {/* Certificate cards - same wide style as before */}
+        {/* Certificate cards */}
         <div className="space-y-6">
+          {/* AWS certificate */}
           <EduWideCard
             delay={0}
+            badgeMain="Completed"
+            badgeSide="Certification"
+            icon={<Cloud className="h-5 w-5 text-slate-800" />}
+            title="AWS SimuLearn: Computing Solutions"
+            subtitle="AWS Training & Certification"
+            batchTitle="Completed On"
+            batchValue="01 Aug 2026"
+            location="Online"
+            logoSrc=""
+            certificateImage="/Certificates/AWS computing solutions.png"
+            certificateLink="/Certificates/AWS computing solutions.png"
+            certificateFit="contain"
+            points={[
+              "Completed AWS SimuLearn: Computing Solutions training",
+              "Developed practical knowledge of AWS computing and cloud solution concepts",
+              "Strengthened understanding of cloud infrastructure and compute services",
+            ]}
+            tags={[
+              "AWS",
+              "Cloud Computing",
+              "Compute",
+              "Cloud Solutions",
+              "Certification",
+            ]}
+          />
+
+          {/* MongoDB certificate */}
+          <EduWideCard
+            delay={0.05}
             badgeMain="Completed"
             badgeSide="Certification"
             icon={<Database className="h-5 w-5 text-slate-800" />}
@@ -158,8 +189,9 @@ export default function Education() {
             batchValue="05 Feb 2026"
             location="Online"
             logoSrc=""
-            certificateImage="/mongodbCertificate.jpg"
-            certificateLink="/mongodbCertificate.jpg"
+            certificateImage="/Certificates/mongodbCertificate.jpg"
+            certificateLink="/Certificates/mongodbCertificate.jpg"
+            certificateFit="cover"
             points={[
               "Completed MongoDB Atlas Administrator Path",
               "Strengthened knowledge in MongoDB Atlas and cloud database administration",
@@ -190,13 +222,19 @@ function EduWideCard({
   logoSrc,
   certificateImage,
   certificateLink,
+  certificateFit = "cover",
 }) {
   const mainBadgeClass =
     badgeMain === "Current"
       ? "bg-red-600 text-white"
       : badgeMain === "Completed"
-      ? "bg-emerald-600 text-white"
-      : "bg-amber-300 text-slate-900";
+        ? "bg-emerald-600 text-white"
+        : "bg-amber-300 text-slate-900";
+
+  const certificateImageClass =
+    certificateFit === "contain"
+      ? "h-40 w-full bg-white object-contain"
+      : "h-40 w-full object-cover object-left-top";
 
   return (
     <motion.div
@@ -207,13 +245,14 @@ function EduWideCard({
       transition={{ duration: 0.6, delay }}
       className="
         group relative overflow-hidden rounded-3xl border border-slate-200
-        bg-white/70 backdrop-blur-md shadow-sm
+        bg-white/70 shadow-sm backdrop-blur-md
         transition-all duration-300
-        hover:border-slate-300/60 hover:shadow-[0_18px_55px_rgba(15,23,42,0.12)]
+        hover:border-slate-300/60
+        hover:shadow-[0_18px_55px_rgba(15,23,42,0.12)]
       "
     >
       <div className="relative p-6 md:p-8">
-        {/* Badges + location */}
+        {/* Badges and location */}
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span
@@ -234,12 +273,12 @@ function EduWideCard({
         </div>
 
         {/* Content grid */}
-        <div className="mt-5 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div className="mt-5 grid grid-cols-1 items-start gap-6 lg:grid-cols-3">
           {/* Left content */}
           <div className="lg:col-span-2">
             <div className="flex items-start gap-3">
               {/* Logo with fallback icon */}
-              <div className="relative h-12 w-12 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <div className="absolute inset-0 grid place-items-center">
                   {icon}
                 </div>
@@ -249,36 +288,38 @@ function EduWideCard({
                     src={logoSrc}
                     alt={`${title} logo`}
                     className="absolute inset-0 h-full w-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
+                    onError={(event) => {
+                      event.currentTarget.style.display = "none";
                     }}
                   />
                 )}
               </div>
 
               <div className="min-w-0">
-                <h3 className="text-xl font-semibold text-slate-900 leading-snug">
+                <h3 className="text-xl font-semibold leading-snug text-slate-900">
                   {title}
                 </h3>
+
                 <p className="mt-1 text-sm text-slate-700">{subtitle}</p>
               </div>
             </div>
 
             {/* Points */}
             <ul className="mt-5 space-y-2 text-sm text-slate-700">
-              {points.map((p, idx) => (
-                <li key={idx} className="flex gap-2">
+              {points.map((point, index) => (
+                <li key={`${point}-${index}`} className="flex gap-2">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-900/70" />
-                  <span className="leading-relaxed">{p}</span>
+
+                  <span className="leading-relaxed">{point}</span>
                 </li>
               ))}
             </ul>
 
             {/* Tags */}
             <div className="mt-5 flex flex-wrap gap-2">
-              {tags.map((tag, idx) => (
+              {tags.map((tag, index) => (
                 <span
-                  key={idx}
+                  key={`${tag}-${index}`}
                   className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-[11px] font-medium text-slate-800"
                 >
                   {tag}
@@ -296,12 +337,13 @@ function EduWideCard({
 
               <div className="mt-2 flex items-center gap-2">
                 <CalendarDays className="h-4 w-4 text-slate-700" />
+
                 <p className="text-sm font-semibold text-slate-900">
                   {batchValue}
                 </p>
               </div>
 
-              {/* Certificate preview - previous style */}
+              {/* Certificate preview */}
               {certificateImage && (
                 <a
                   href={certificateLink || certificateImage}
@@ -312,9 +354,9 @@ function EduWideCard({
                   <img
                     src={certificateImage}
                     alt={`${title} certificate`}
-                    className="h-32 w-full object-cover object-left-top"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
+                    className={certificateImageClass}
+                    onError={(event) => {
+                      event.currentTarget.style.display = "none";
                     }}
                   />
 
@@ -333,8 +375,10 @@ function EduWideCard({
                   </div>
 
                   <p className="mt-1 text-sm text-slate-800">
-                    • Combined Mathematics <br />
-                    • Physics <br />
+                    • Combined Mathematics
+                    <br />
+                    • Physics
+                    <br />
                     • Chemistry
                   </p>
                 </div>
