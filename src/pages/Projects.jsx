@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+
 import ProjectCard from "../Components/Projectcard";
-import ProjectCardCurrent from "../Components/ProjectCardCurrent";
+import ProjectCardCurrent from "../Components/ProjectcardCurrent";
 import PageBackground from "../Components/Pagebackground";
 
 const projects = [
@@ -32,7 +33,7 @@ const projects = [
     subtitle: "University Social Platform",
     period: "2026",
     description:
-      "A university-focused social platform with Authentication, Role-based access, Notifications, Role request management, and OAuth login improvements to support students, academics, and admins.",
+      "A university-focused social platform with authentication, role-based access, notifications, role request management, and OAuth login improvements to support students, academics, and admins.",
     tags: [
       "Spring Boot",
       "TypeScript",
@@ -153,7 +154,6 @@ const projects = [
 export default function Projects() {
   const [count, setCount] = useState(0);
 
-  // Counter animation
   useEffect(() => {
     const total = projects.length;
     let current = 0;
@@ -205,11 +205,7 @@ export default function Projects() {
           </p>
 
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            My{" "}
-            <span className="text-violet-700">
-              Projects
-            </span>{" "}
-            showcase
+            My <span className="text-violet-700">Projects</span> showcase
           </h2>
 
           {/* Project count */}
