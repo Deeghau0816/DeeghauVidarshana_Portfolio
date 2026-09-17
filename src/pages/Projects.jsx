@@ -6,6 +6,27 @@ import ProjectCardCurrent from "../Components/ProjectcardCurrent";
 import PageBackground from "../Components/Pagebackground";
 
 const projects = [
+    
+    {
+    title: "DineFlow",
+    subtitle: "Restaurant Management System",
+    period: "2026 • Ongoing",
+    description:
+      "Currently developing a production-style restaurant management system with online menu browsing, table reservations, customer interactions, and a secure admin dashboard for managing categories, menu items, reservations, and restaurant information.",
+    tags: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "REST API",
+      "SQLAlchemy",
+    ],
+    githubUrl: "https://github.com/Deeghau0816/Dine-Flow.git",
+    isUni: false,
+    isCurrent: true,
+  },
+
   {
     title: "AegisBank",
     subtitle: "Agentic AI Banking System",
