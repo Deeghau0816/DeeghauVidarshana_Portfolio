@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import PageBackground from "../Components/Pagebackground";
+
 import {
   ClipboardCheck,
   Code2,
@@ -15,9 +16,30 @@ import {
   Layers,
   Server,
   Braces,
+  BarChart3,
+  Cloud,
+  Workflow,
+  BriefcaseBusiness,
+  GitBranch,
+  MonitorSmartphone,
+  Cpu,
+  Boxes,
+  LockKeyhole,
 } from "lucide-react";
 
-import { SiKotlin, SiJavascript } from "react-icons/si";
+import {
+  SiKotlin,
+  SiJavascript,
+  SiPython,
+  SiPostgresql,
+  SiMongodb,
+  SiDocker,
+  SiReact,
+  SiFastapi,
+  SiTypescript,
+  SiGit,
+  SiGithub,
+} from "react-icons/si";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -35,7 +57,8 @@ export default function Skills() {
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-5">
-        {/* Header */}
+
+        {/* HEADER */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -44,23 +67,27 @@ export default function Skills() {
           className="mb-10"
         >
           <p className="text-sm font-medium tracking-wide text-slate-700">
-            SKILLS • HONEST SNAPSHOT
+            SKILLS • CURRENT PROFILE
           </p>
 
           <h1 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Skills I am using for my{" "}
-            <span className="text-indigo-700">Data Science</span> career
+            Building across{" "}
+            <span className="text-indigo-700">Data Science</span>
+            {" & "}
+            <span className="text-blue-700">Software Engineering</span>
           </h1>
 
-          <p className="mt-4 max-w-3xl text-slate-700 leading-relaxed">
-            This is an honest view of what I can do now and what I’m currently
-            improving.
+          <p className="mt-4 max-w-4xl text-slate-700 leading-relaxed">
+            My skill set combines Data Science, analytics, machine learning,
+            full-stack software engineering, backend development, databases,
+            cloud technologies, and real-world problem solving through
+            professional, academic, and independent projects.
           </p>
         </motion.div>
 
-        {/* CORE + LEVELS */}
+        {/* CORE SKILLS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Core Skills */}
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -70,65 +97,250 @@ export default function Skills() {
             className="lg:col-span-2 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-md shadow-sm"
           >
             <div className="p-6 md:p-8">
+
               <h2 className="text-xl font-semibold text-blue-700 flex items-center gap-2">
-                <ClipboardCheck className="h-5 w-5 text-blue-700" />
-                Core Skills
+                <ClipboardCheck className="h-5 w-5" />
+                Core Technical Skills
               </h2>
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                {/* DATA SCIENCE */}
                 <SkillGroup
-                  title="EDA + Visualization"
+                  icon={<BarChart3 className="h-5 w-5 text-indigo-700" />}
+                  title="Data Analytics & Visualization"
                   items={[
-                    "Pandas",
-                    "NumPy",
-                    "Matplotlib / Plotly",
-                    "Insights + storytelling",
+                    "Pandas & NumPy",
+                    "Power BI",
+                    "Matplotlib & Plotly",
+                    "Data cleaning & transformation",
+                    "Exploratory Data Analysis",
+                    "KPI reporting & storytelling",
                   ]}
                 />
 
                 <SkillGroup
-                  title="Python + Projects"
+                  icon={<Brain className="h-5 w-5 text-fuchsia-700" />}
+                  title="Machine Learning & Data Science"
                   items={[
-                    "Clean code habits",
-                    "APIs to datasets",
-                    "Notebook → app",
+                    "Supervised learning",
+                    "Unsupervised learning",
+                    "Classification & clustering",
+                    "Model evaluation",
+                    "Feature preparation",
+                    "ML experimentation",
+                  ]}
+                />
+
+                {/* SOFTWARE ENGINEERING */}
+                <SkillGroup
+                  icon={<Code2 className="h-5 w-5 text-blue-700" />}
+                  title="Software Engineering"
+                  items={[
+                    "Object-Oriented Programming",
+                    "Modular application design",
+                    "Reusable components",
+                    "Clean code practices",
+                    "Debugging & testing",
+                    "Git-based development workflows",
                   ]}
                 />
 
                 <SkillGroup
-                  title="ML Basics (Growing)"
+                  icon={<MonitorSmartphone className="h-5 w-5 text-cyan-700" />}
+                  title="Frontend Development"
                   items={[
-                    "Baselines",
-                    "Train / test thinking",
-                    "Evaluation practice",
+                    "React",
+                    "JavaScript",
+                    "TypeScript",
+                    "Vite",
+                    "Tailwind CSS",
+                    "Responsive web interfaces",
                   ]}
                 />
 
                 <SkillGroup
-                  title="Data Engineering (Learning)"
+                  icon={<Server className="h-5 w-5 text-purple-700" />}
+                  title="Backend Development"
                   items={[
-                    "SQL improving",
-                    "Pipelines mindset",
+                    "Python & FastAPI",
+                    "REST API development",
+                    "SQLAlchemy",
+                    "Alembic migrations",
+                    "Request validation",
+                    "Backend architecture",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<LockKeyhole className="h-5 w-5 text-red-600" />}
+                  title="Authentication & Application Security"
+                  items={[
+                    "JWT / session concepts",
+                    "Password hashing",
+                    "Protected API routes",
+                    "Role-based access concepts",
+                    "CORS configuration",
+                    "Secure application workflows",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<Database className="h-5 w-5 text-emerald-700" />}
+                  title="Databases"
+                  items={[
+                    "PostgreSQL",
+                    "MongoDB",
+                    "SQL",
+                    "Relational data modeling",
+                    "Database relationships",
+                    "CRUD operations",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<Layers className="h-5 w-5 text-violet-700" />}
+                  title="Full-Stack Development"
+                  items={[
+                    "React + FastAPI",
+                    "MERN Stack",
+                    "Frontend / backend integration",
+                    "API consumption",
+                    "State-driven interfaces",
+                    "End-to-end project development",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<GitBranch className="h-5 w-5 text-orange-600" />}
+                  title="Version Control & Collaboration"
+                  items={[
+                    "Git",
+                    "GitHub",
+                    "Branches",
+                    "Merge workflows",
+                    "Repository management",
+                    "Team-based development",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<MonitorSmartphone className="h-5 w-5 text-violet-700" />}
+                  title="Mobile Development"
+                  items={[
+                    "Kotlin",
+                    "Android development",
+                    "Fragments",
+                    "Navigation Component",
+                    "SharedPreferences",
+                    "WorkManager",
+                  ]}
+                />
+
+                {/* CLOUD / DEVOPS */}
+                <SkillGroup
+                  icon={<Cloud className="h-5 w-5 text-cyan-700" />}
+                  title="Cloud & Infrastructure"
+                  items={[
+                    "AWS fundamentals",
+                    "EC2 concepts",
+                    "Cloud databases",
+                    "Storage concepts",
+                    "Load balancing",
+                    "Auto scaling fundamentals",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<Boxes className="h-5 w-5 text-blue-600" />}
+                  title="DevOps & Containerization"
+                  items={[
+                    "Docker",
+                    "Docker Compose",
+                    "Containerized development",
+                    "Environment isolation",
+                    "Deployment foundations",
+                    "WSL 2",
+                  ]}
+                />
+
+                {/* DATA WORKFLOW */}
+                <SkillGroup
+                  icon={<Workflow className="h-5 w-5 text-orange-600" />}
+                  title="Automation & Data Workflows"
+                  items={[
+                    "Power Automate",
+                    "Data refresh workflows",
+                    "Excel-based pipelines",
+                    "Data validation",
+                    "Reporting automation",
+                    "Workflow design",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<Cpu className="h-5 w-5 text-teal-700" />}
+                  title="Data Platforms & Engineering"
+                  items={[
+                    "Databricks exposure",
+                    "Dataiku exposure",
+                    "Data pipeline concepts",
                     "Structured storage",
+                    "Cloud data concepts",
+                    "Scalable processing fundamentals",
+                  ]}
+                />
+
+                {/* REAL EXPERIENCE */}
+                <SkillGroup
+                  icon={
+                    <BriefcaseBusiness className="h-5 w-5 text-slate-700" />
+                  }
+                  title="Applied Project Experience"
+                  items={[
+                    "Business data analysis",
+                    "Full-stack applications",
+                    "REST API systems",
+                    "ML & AI projects",
+                    "Database-driven applications",
+                    "Team project leadership",
+                  ]}
+                />
+
+                <SkillGroup
+                  icon={<Sparkles className="h-5 w-5 text-amber-600" />}
+                  title="AI & Intelligent Systems"
+                  items={[
+                    "Machine Learning",
+                    "Agentic AI concepts",
+                    "Multi-agent systems",
+                    "Decision support systems",
+                    "Explainable AI interest",
+                    "Responsible AI concepts",
                   ]}
                 />
               </div>
 
+              {/* CURRENT DIRECTION */}
               <div className="mt-8 rounded-2xl border border-slate-200 bg-white/65 p-5">
                 <p className="font-semibold text-blue-700 flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-blue-700" />
-                  Note
+                  <Sparkles className="h-4 w-4" />
+                  My Technical Direction
                 </p>
 
-                <p className="mt-2 text-sm text-slate-700">
-                  Data Science is my main path. I’m building skills through real
-                  projects and improving week by week.
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                  I am developing at the intersection of Data Science and
+                  Software Engineering. My goal is not only to analyze data or
+                  train models, but also to design the APIs, databases,
+                  interfaces, and systems required to turn intelligent ideas
+                  into complete real-world applications.
                 </p>
               </div>
+
             </div>
           </motion.div>
 
-          {/* Skill Levels + Languages */}
+          {/* SKILL LEVELS */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -138,33 +350,87 @@ export default function Skills() {
             className="rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-md shadow-sm"
           >
             <div className="p-6 md:p-8">
+
               <h3 className="text-lg font-semibold text-teal-700">
-                Skill levels (self-estimate)
+                Current Skill Levels
               </h3>
 
-              <div className="mt-4 space-y-3">
-                <SkillBar label="EDA + Visualization" value={82} />
-                <SkillBar label="Dashboards / Reporting" value={74} />
-                <SkillBar label="Python + Data Handling" value={78} />
-                <SkillBar label="ML Basics" value={66} />
-                <SkillBar label="Data Engineering" value={58} />
+              <p className="mt-2 text-xs text-slate-500">
+                Self-assessed from academic, professional, and project
+                experience.
+              </p>
+
+              <div className="mt-5 space-y-4">
+
+                <SkillBar
+                  label="Data Analysis & Visualization"
+                  value={88}
+                />
+
+                <SkillBar
+                  label="Software Development"
+                  value={84}
+                />
+
+                <SkillBar
+                  label="Python"
+                  value={84}
+                />
+
+                <SkillBar
+                  label="Frontend Development"
+                  value={82}
+                />
+
+                <SkillBar
+                  label="Backend / REST APIs"
+                  value={80}
+                />
+
+                <SkillBar
+                  label="SQL & Databases"
+                  value={78}
+                />
+
+                <SkillBar
+                  label="Power BI / Reporting"
+                  value={84}
+                />
+
+                <SkillBar
+                  label="Machine Learning"
+                  value={73}
+                />
+
+                <SkillBar
+                  label="Cloud / DevOps"
+                  value={68}
+                />
+
               </div>
 
-              {/* Languages */}
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-white/65 p-4">
+              {/* TECHNOLOGIES */}
+              <div className="mt-7 rounded-2xl border border-slate-200 bg-white/65 p-4">
+
                 <p className="text-sm font-semibold text-red-600 mb-3">
-                  Languages & Stacks
+                  Languages & Technologies
                 </p>
 
                 <div className="flex flex-wrap gap-2">
+
                   <LangPill
-                    icon={<Layers className="h-4 w-4 text-indigo-700" />}
-                    label="MERN"
+                    icon={<SiPython className="h-4 w-4 text-blue-700" />}
+                    label="Python"
                   />
 
                   <LangPill
-                    icon={<Server className="h-4 w-4 text-purple-700" />}
-                    label="PHP"
+                    icon={<SiJavascript className="h-4 w-4 text-yellow-500" />}
+                    label="JavaScript"
+                  />
+
+                  <LangPill
+                    icon={<SiTypescript className="h-4 w-4 text-blue-600" />}
+                    label="TypeScript"
                   />
 
                   <LangPill
@@ -173,8 +439,8 @@ export default function Skills() {
                   />
 
                   <LangPill
-                    icon={<Braces className="h-4 w-4 text-cyan-700" />}
-                    label="Python"
+                    icon={<SiKotlin className="h-4 w-4 text-violet-700" />}
+                    label="Kotlin"
                   />
 
                   <LangPill
@@ -188,16 +454,58 @@ export default function Skills() {
                   />
 
                   <LangPill
-                    icon={<SiKotlin className="h-4 w-4 text-violet-700" />}
-                    label="Kotlin"
+                    icon={<SiReact className="h-4 w-4 text-cyan-700" />}
+                    label="React"
                   />
 
                   <LangPill
-                    icon={<SiJavascript className="h-4 w-4 text-yellow-500" />}
-                    label="JavaScript"
+                    icon={<SiFastapi className="h-4 w-4 text-teal-700" />}
+                    label="FastAPI"
                   />
+
+                  <LangPill
+                    icon={<Layers className="h-4 w-4 text-indigo-700" />}
+                    label="MERN"
+                  />
+
+                  <LangPill
+                    icon={<SiPostgresql className="h-4 w-4 text-blue-700" />}
+                    label="PostgreSQL"
+                  />
+
+                  <LangPill
+                    icon={<SiMongodb className="h-4 w-4 text-green-700" />}
+                    label="MongoDB"
+                  />
+
+                  <LangPill
+                    icon={<SiDocker className="h-4 w-4 text-blue-600" />}
+                    label="Docker"
+                  />
+
+                  <LangPill
+                    icon={<Cloud className="h-4 w-4 text-orange-500" />}
+                    label="AWS"
+                  />
+
+                  <LangPill
+                    icon={<BarChart3 className="h-4 w-4 text-yellow-600" />}
+                    label="Power BI"
+                  />
+
+                  <LangPill
+                    icon={<SiGit className="h-4 w-4 text-orange-600" />}
+                    label="Git"
+                  />
+
+                  <LangPill
+                    icon={<SiGithub className="h-4 w-4 text-slate-800" />}
+                    label="GitHub"
+                  />
+
                 </div>
               </div>
+
             </div>
           </motion.div>
         </div>
@@ -212,98 +520,124 @@ export default function Skills() {
           className="mt-6 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-md shadow-sm"
         >
           <div className="p-6 md:p-8">
+
             <h2 className="text-xl font-semibold text-orange-600">
-              Soft skills
+              Professional & Soft Skills
             </h2>
 
             <div className="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              {/* Soft skills list */}
+
               <div className="space-y-4">
+
                 <SoftSkillLine
                   icon={<ShieldCheck className="h-4 w-4 text-indigo-700" />}
-                  title="Leadership"
-                  desc="Guide teams, take ownership of decisions, and ensure goals are achieved."
+                  title="Leadership & Ownership"
+                  desc="Lead teams, coordinate responsibilities, make decisions, and take ownership of project outcomes."
                 />
 
                 <SoftSkillLine
                   icon={<Users className="h-4 w-4 text-indigo-700" />}
-                  title="Team collaboration"
-                  desc="Support teammates, share progress, and stay aligned."
+                  title="Team Collaboration"
+                  desc="Work effectively across technical and creative teams while keeping communication and responsibilities aligned."
                 />
 
                 <SoftSkillLine
                   icon={<MessageSquare className="h-4 w-4 text-cyan-700" />}
-                  title="Clear communication"
-                  desc="Explain work simply and clearly."
+                  title="Communication & Presentation"
+                  desc="Communicate ideas clearly through presentations, discussions, technical explanations, and public speaking."
                 />
 
                 <SoftSkillLine
                   icon={<Target className="h-4 w-4 text-fuchsia-700" />}
-                  title="Problem solving"
-                  desc="Break problems down and iterate."
+                  title="Problem Solving"
+                  desc="Analyze complex requirements, break problems into manageable components, and develop practical solutions."
                 />
 
                 <SoftSkillLine
                   icon={<CalendarCheck className="h-4 w-4 text-amber-700" />}
-                  title="Time management"
-                  desc="Deliver work on deadlines."
+                  title="Project & Time Management"
+                  desc="Balance internship work, university responsibilities, software projects, and deadlines."
                 />
 
                 <SoftSkillLine
                   icon={<Lightbulb className="h-4 w-4 text-emerald-700" />}
-                  title="Fast learner"
-                  desc="Learn by building and experimenting."
+                  title="Continuous Learning"
+                  desc="Adapt to new technologies quickly and strengthen skills through real development and experimentation."
                 />
 
                 <SoftSkillLine
                   icon={<Brain className="h-4 w-4 text-slate-700" />}
-                  title="Ownership"
-                  desc="Take responsibility and finish tasks."
+                  title="Creative Thinking"
+                  desc="Combine technical problem solving with communication, media, design, and storytelling experience."
                 />
+
               </div>
 
-              {/* Talent image */}
+              {/* TALENT IMAGE */}
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm min-h-[570px]">
+
                 <img
                   src="/talent.jpeg"
-                  alt="My talent and creative skills"
+                  alt="Media, leadership and creative experience"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
 
                 <div className="absolute bottom-4 left-4 right-4">
+
                   <div className="rounded-2xl bg-white/85 backdrop-blur-md border border-white/70 p-4 shadow-sm">
+
                     <p className="text-sm font-semibold text-slate-900">
-                      Creativity beyond coding
+                      Beyond Engineering
                     </p>
-                    <p className="mt-1 text-xs text-slate-700">
-                      Media work, event involvement, leadership, and creative
-                      thinking strengthen how I work with people and projects.
+
+                    <p className="mt-1 text-xs text-slate-700 leading-relaxed">
+                      Leadership, announcing, media production, photography,
+                      event involvement, and creative work have strengthened my
+                      communication, confidence, teamwork, and ability to
+                      present ideas effectively.
                     </p>
+
                   </div>
+
                 </div>
               </div>
+
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
 }
 
-/* ---------- Components ---------- */
+/* ========================================================= */
+/* COMPONENTS */
+/* ========================================================= */
 
-function SkillGroup({ title, items }) {
+function SkillGroup({ icon, title, items }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4">
-      <p className="font-semibold text-slate-900">{title}</p>
+    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
 
-      <ul className="mt-2 space-y-1 text-sm text-slate-700">
-        {items.map((i, idx) => (
-          <li key={idx}>• {i}</li>
+      <div className="flex items-center gap-2">
+        {icon}
+
+        <p className="font-semibold text-slate-900">
+          {title}
+        </p>
+      </div>
+
+      <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+        {items.map((item, index) => (
+          <li key={index} className="flex gap-2">
+            <span className="text-indigo-600">•</span>
+            <span>{item}</span>
+          </li>
         ))}
       </ul>
+
     </div>
   );
 }
@@ -311,44 +645,68 @@ function SkillGroup({ title, items }) {
 function SkillBar({ label, value }) {
   return (
     <div>
+
       <div className="flex justify-between text-sm">
-        <span className="text-slate-800 font-medium">{label}</span>
-        <span className="text-slate-500">{value}%</span>
+        <span className="text-slate-800 font-medium">
+          {label}
+        </span>
+
+        <span className="text-slate-500">
+          {value}%
+        </span>
       </div>
 
       <div className="mt-2 h-2 rounded-full bg-slate-200 overflow-hidden">
+
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${value}%` }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
+          transition={{
+            duration: 0.9,
+            ease: "easeOut",
+          }}
           className="h-full rounded-full bg-slate-900"
         />
+
       </div>
+
     </div>
   );
 }
 
 function LangPill({ icon, label }) {
   return (
-    <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium shadow-sm text-slate-800">
-      <span className="text-lg leading-none">{icon}</span>
+    <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium shadow-sm text-slate-800 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+
+      <span className="text-lg leading-none">
+        {icon}
+      </span>
+
       {label}
+
     </div>
   );
 }
 
 function SoftSkillLine({ icon, title, desc }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4 flex gap-3">
-      <div className="p-2 border border-slate-200 rounded-xl bg-white">
+    <div className="rounded-2xl border border-slate-200 bg-white/65 p-4 flex gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+
+      <div className="p-2 border border-slate-200 rounded-xl bg-white h-fit">
         {icon}
       </div>
 
       <div>
-        <p className="font-semibold text-slate-900">{title}</p>
-        <p className="text-sm text-slate-700 mt-1">{desc}</p>
+        <p className="font-semibold text-slate-900">
+          {title}
+        </p>
+
+        <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+          {desc}
+        </p>
       </div>
+
     </div>
   );
 }

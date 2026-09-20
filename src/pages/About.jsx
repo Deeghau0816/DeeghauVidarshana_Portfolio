@@ -13,6 +13,12 @@ import {
   Layers3,
   ClipboardCheck,
   Briefcase,
+  Server,
+  Cloud,
+  Workflow,
+  GitBranch,
+  Boxes,
+  MonitorSmartphone,
 } from "lucide-react";
 
 const fadeUp = {
@@ -23,7 +29,9 @@ const fadeUp = {
 export default function About() {
   return (
     <section className="relative min-h-screen overflow-hidden pt-24 pb-16">
-      {/* Background video */}
+
+      {/* ================= BACKGROUND ================= */}
+
       <div className="pointer-events-none absolute inset-0">
         <video
           className="h-full w-full object-cover"
@@ -40,16 +48,23 @@ export default function About() {
       </div>
 
       {/* Background blobs */}
+
       <div className="pointer-events-none absolute inset-0">
+
         <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-indigo-500/15 blur-3xl" />
 
         <div className="absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-cyan-500/12 blur-3xl" />
 
         <div className="absolute -bottom-24 left-1/3 h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/10 blur-3xl" />
+
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-5">
-        {/* Top header */}
+
+        {/* ================================================= */}
+        {/* HEADER */}
+        {/* ================================================= */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -57,49 +72,97 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
+
           <p className="text-sm font-medium tracking-wide text-slate-700">
-            ABOUT • DATA SCIENCE PATH
+            ABOUT • DATA SCIENCE • SOFTWARE ENGINEERING • AI
           </p>
 
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            My <span className="text-indigo-700">Data Science</span> journey —
-            learning, building, and improving with{" "}
-            <span className="text-cyan-700">real data</span>.
+
+            Building at the intersection of{" "}
+
+            <span className="text-indigo-700">
+              Data Science
+            </span>
+
+            ,{" "}
+
+            <span className="text-blue-700">
+              Software Engineering
+            </span>
+
+            {" & "}
+
+            <span className="text-cyan-700">
+              Intelligent Systems
+            </span>
+
+            .
+
           </h1>
 
-          <p className="mt-4 max-w-3xl leading-relaxed text-slate-700">
-            I’m an IT undergraduate specializing in{" "}
-            <span className="font-medium text-slate-900">Data Science</span>,
-            focused on building practical, data-driven systems. I strengthen my
-            foundations through hands-on projects in{" "}
+          <p className="mt-4 max-w-4xl leading-relaxed text-slate-700">
+
+            I’m an Information Technology undergraduate specializing in{" "}
+
             <span className="font-medium text-slate-900">
-              Exploratory Data Analysis
+              Data Science
             </span>
-            ,{" "}
-            <span className="font-medium text-slate-900">Visualization</span>,{" "}
+
+            , with industry experience as a{" "}
+
             <span className="font-medium text-slate-900">
-              Predictive Modeling
+              Data Analyst Intern at Michelin Lanka
             </span>
-            , and{" "}
+
+            . My technical background spans both Data Science and Software
+            Engineering, allowing me to work from raw data and analytical
+            requirements all the way to complete software systems.
+
+            <br />
+            <br />
+
+            On the data side, I work with analytics, Power BI, Python, SQL,
+            machine learning, data workflows, databases, and data platforms.
+            On the software engineering side, I build full-stack applications,
+            backend services, REST APIs, database-driven systems, and modern
+            responsive web applications.
+
+            <br />
+            <br />
+
+            My development experience includes{" "}
+
             <span className="font-medium text-slate-900">
-              Dashboard Development
+              React, JavaScript, TypeScript, Python, FastAPI, PostgreSQL,
+              MongoDB, REST APIs, Git, GitHub, Docker, and cloud technologies
             </span>
-            .
+
+            . I enjoy taking an idea from requirements and architecture through
+            development, database integration, APIs, testing, and a usable
+            final application.
+
             <br />
             <br />
-            I actively work with real-world datasets to understand patterns,
-            engineer features, and apply machine learning techniques. Alongside
-            analytics, I’m developing strong data engineering fundamentals by
-            learning how to structure, manage, and prepare data efficiently for
-            scalable solutions.
-            <br />
-            <br />
-            My goal is to bridge analytics and engineering to build impactful,
-            intelligent systems.
+
+            I’m especially interested in{" "}
+
+            <span className="font-medium text-slate-900">
+              Machine Learning, Explainable AI, Software Engineering, Data
+              Engineering, Big Data, intelligent applications, and
+              decision-support systems
+            </span>
+
+            . My long-term direction is to combine strong engineering with
+            data and AI to build scalable systems that solve meaningful
+            real-world problems.
+
           </p>
 
-          {/* Quick information */}
+          {/* QUICK INFORMATION */}
+
           <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-700">
+
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1">
               <MapPin className="h-4 w-4 text-slate-600" />
               Sri Lanka
@@ -107,52 +170,80 @@ export default function About() {
 
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1">
               <Briefcase className="h-4 w-4 text-slate-600" />
-              Data Analyst Intern at Michelin Lanka
+              Data Analyst Intern • Michelin Lanka
             </span>
 
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1">
               <Sparkles className="h-4 w-4 text-slate-600" />
-              Data-first • Practical projects
+              Data • Software • AI
             </span>
+
           </div>
 
-          {/* Role chips */}
+          {/* ROLE CHIPS */}
+
           <div className="mt-5 flex flex-wrap gap-2">
+
             <RoleChip
               tone="strong"
               icon={<BarChart3 className="h-4 w-4" />}
-              text="Data Analyst"
-            />
-
-            <RoleChip
-              tone="strong"
-              icon={<LineChart className="h-4 w-4" />}
-              text="BI / Dashboarding"
+              text="Data Analytics"
             />
 
             <RoleChip
               tone="strong"
               icon={<Brain className="h-4 w-4" />}
-              text="Data Science"
+              text="Data Science & ML"
+            />
+
+            <RoleChip
+              tone="strong"
+              icon={<Code2 className="h-4 w-4" />}
+              text="Software Engineering"
+            />
+
+            <RoleChip
+              tone="strong"
+              icon={<MonitorSmartphone className="h-4 w-4" />}
+              text="Full-Stack Development"
+            />
+
+            <RoleChip
+              tone="strong"
+              icon={<Server className="h-4 w-4" />}
+              text="Backend & APIs"
+            />
+
+            <RoleChip
+              tone="strong"
+              icon={<Database className="h-4 w-4" />}
+              text="Databases"
             />
 
             <RoleChip
               tone="learning"
-              icon={<Database className="h-4 w-4" />}
-              text="Data Engineering"
+              icon={<Sparkles className="h-4 w-4" />}
+              text="AI & Intelligent Systems"
             />
 
             <RoleChip
               tone="learning"
-              icon={<Database className="h-4 w-4" />}
-              text="Cloud + Big Data Foundations"
+              icon={<Cloud className="h-4 w-4" />}
+              text="Cloud & Data Engineering"
             />
+
           </div>
+
         </motion.div>
 
-        {/* Main grid */}
+        {/* ================================================= */}
+        {/* MAIN GRID */}
+        {/* ================================================= */}
+
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {/* Left card */}
+
+          {/* ================= LEFT SIDE ================= */}
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -168,132 +259,204 @@ export default function About() {
               lg:col-span-2
             "
           >
+
             <div className="p-6 md:p-8">
+
               <h2 className="text-xl font-semibold text-slate-900">
-                My Data Science focus
+                What I build
               </h2>
 
               <p className="mt-3 leading-relaxed text-slate-700">
-                I enjoy working on problems where data tells a story. My goal is
-                to build skills that make me useful in a real team—not just
-                theory. I focus on clean analysis, clear insights, and practical
-                outputs such as dashboards and machine learning solutions.
+
+                I enjoy working across the complete lifecycle of a technical
+                solution—from understanding the problem and designing the
+                system to handling data, building APIs, developing interfaces,
+                connecting databases, analyzing results, and delivering a
+                usable final product.
+
+                <br />
+                <br />
+
+                This combination of Data Science and Software Engineering allows
+                me to go beyond analysis alone. I can explore data, identify
+                useful insights, experiment with intelligent approaches, and
+                then engineer applications that make those capabilities
+                accessible to real users.
+
               </p>
 
-              {/* Focus cards */}
+              {/* ================= FOCUS CARDS ================= */}
+
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+
                 <MiniCard
-                  icon={<Layers3 className="h-5 w-5 text-indigo-700" />}
-                  title="EDA + Visualization"
-                  desc="Cleaning data, identifying patterns, creating charts, and presenting clear summaries."
+                  icon={<BarChart3 className="h-5 w-5 text-indigo-700" />}
+                  title="Data Analytics & BI"
+                  desc="Exploratory analysis, KPI development, Power BI dashboards, reporting, data preparation, and turning business requirements into actionable insights."
                 />
 
                 <MiniCard
-                  icon={<LineChart className="h-5 w-5 text-cyan-700" />}
-                  title="Insights + Reporting"
-                  desc="Building dashboards, defining KPIs, analyzing trends, and communicating findings."
+                  icon={<Code2 className="h-5 w-5 text-blue-700" />}
+                  title="Software Engineering"
+                  desc="Designing structured applications with reusable components, clean architecture, object-oriented thinking, maintainable code, debugging, and collaborative development practices."
+                />
+
+                <MiniCard
+                  icon={<Server className="h-5 w-5 text-cyan-700" />}
+                  title="Backend & API Development"
+                  desc="Building REST APIs, backend services, database integrations, validation, authentication workflows, and application logic using technologies such as Python and FastAPI."
+                />
+
+                <MiniCard
+                  icon={<MonitorSmartphone className="h-5 w-5 text-violet-700" />}
+                  title="Full-Stack Development"
+                  desc="Building responsive applications with modern frontend technologies and connecting them to backend APIs, databases, authentication, and business logic."
+                />
+
+                <MiniCard
+                  icon={<Database className="h-5 w-5 text-emerald-700" />}
+                  title="Databases & Data Engineering"
+                  desc="Working with PostgreSQL, MongoDB, SQL, APIs, structured data, migrations, automated workflows, and scalable data-processing concepts."
                 />
 
                 <MiniCard
                   icon={<Brain className="h-5 w-5 text-fuchsia-700" />}
-                  title="Machine Learning"
-                  desc="Building baseline models, evaluating results, and improving solutions through iteration."
+                  title="Machine Learning & AI"
+                  desc="Developing and evaluating machine learning solutions while exploring Explainable AI, responsible AI, intelligent agents, and decision-support systems."
                 />
 
-                <MiniCard
-                  icon={<Code2 className="h-5 w-5 text-amber-700" />}
-                  title="Build + Deliver"
-                  desc="Turning analytical results into practical applications, dashboards, and systems."
-                />
               </div>
 
-              {/* Roles */}
+              {/* ================================================= */}
+              {/* WHERE I CREATE VALUE */}
+              {/* ================================================= */}
+
               <div className="mt-8">
+
                 <h3 className="text-lg font-semibold text-slate-900">
-                  Roles I’m building towards
+                  Where I create value
                 </h3>
 
                 <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                  These areas represent what I can contribute now and the skills
-                  I am continuously developing.
+
+                  My strongest advantage is being able to work across multiple
+                  layers of a solution instead of viewing data, software,
+                  databases, and AI as completely separate areas.
+
                 </p>
 
                 <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+
                   <ReadyCard
-                    badge="Strong fit now"
-                    title="Data Analytics"
+                    badge="Industry Experience"
+                    title="Data Analytics & BI"
                     icon={<BarChart3 className="h-4 w-4 text-indigo-700" />}
                     points={[
-                      "Data cleaning and exploratory analysis",
-                      "Business-focused KPIs and trend analysis",
-                      "Presenting insights clearly and simply",
+                      "Exploratory analysis and data preparation",
+                      "Power BI dashboards and reporting",
+                      "Business KPI and trend analysis",
+                      "Translating requirements into measurable insights",
                     ]}
                   />
 
                   <ReadyCard
-                    badge="Strong fit now"
-                    title="BI / Dashboarding"
-                    icon={<LineChart className="h-4 w-4 text-cyan-700" />}
+                    badge="Project Experience"
+                    title="Software Engineering"
+                    icon={<Code2 className="h-4 w-4 text-blue-700" />}
                     points={[
-                      "Professional dashboard layouts",
-                      "Visual storytelling for decision-making",
-                      "Transforming complex data into clear views",
+                      "Full-stack application development",
+                      "Frontend and backend architecture",
+                      "REST APIs and database-driven systems",
+                      "Git-based team and individual development",
                     ]}
                   />
 
                   <ReadyCard
-                    badge="Growing"
-                    title="Data Science"
+                    badge="Growing Specialization"
+                    title="Machine Learning & AI"
                     icon={<Brain className="h-4 w-4 text-fuchsia-700" />}
                     points={[
-                      "Developing practical ML workflows",
+                      "Machine learning workflows",
+                      "Classification and clustering",
                       "Model evaluation and experimentation",
-                      "Improving solutions through iteration",
+                      "Explainable AI and intelligent systems",
                     ]}
                   />
 
                   <ReadyCard
-                    badge="Learning"
-                    title="Data Engineering"
+                    badge="Growing Specialization"
+                    title="Data & Cloud Engineering"
                     icon={<Database className="h-4 w-4 text-amber-700" />}
                     points={[
-                      "Working with APIs and structured datasets",
-                      "Understanding reliable data pipelines",
-                      "Improving SQL and data organization",
+                      "SQL and structured databases",
+                      "Automated data workflows",
+                      "Data platforms and processing concepts",
+                      "Cloud and scalable architecture foundations",
                     ]}
                   />
+
                 </div>
+
               </div>
 
-              {/* Current progress */}
+              {/* ================================================= */}
+              {/* CURRENT PROGRESS */}
+              {/* ================================================= */}
+
               <div className="mt-8">
+
                 <h3 className="text-lg font-semibold text-slate-900">
                   What I’m doing now
                 </h3>
 
                 <ul className="mt-4 space-y-3">
+
                   <TimelineItem
-                    title="Gaining real industry experience"
-                    desc="Working as a Data Analyst Intern at Michelin Lanka and applying analytical thinking to real business requirements."
+                    title="Applying Data Analytics in industry"
+                    desc="Working as a Data Analyst Intern at Michelin Lanka and gaining practical experience with business analytics, reporting, dashboards, automation, data workflows, and decision-support requirements."
                   />
 
                   <TimelineItem
-                    title="Deepening Data Science foundations"
-                    desc="Improving my knowledge of statistics, exploratory analysis, feature engineering, and model evaluation."
+                    title="Building production-style software projects"
+                    desc="Developing full-stack applications with React, TypeScript, FastAPI, PostgreSQL, MongoDB, REST APIs, authentication, Git, and modern software engineering practices."
                   />
 
                   <TimelineItem
-                    title="Building projects that demonstrate value"
-                    desc="Creating dashboards, analytical systems, data applications, and machine learning experiments."
+                    title="Advancing in Machine Learning & Data Science"
+                    desc="Strengthening my understanding of machine learning, data mining, optimization, model evaluation, Explainable AI, and responsible data-driven decision making."
                   />
+
+                  <TimelineItem
+                    title="Strengthening backend & database engineering"
+                    desc="Building APIs, database models, relationships, migrations, authentication flows, CRUD systems, and structured backend architectures."
+                  />
+
+                  <TimelineItem
+                    title="Exploring Cloud, Docker & scalable systems"
+                    desc="Developing practical foundations in Docker, containerization, AWS, cloud computing, distributed processing, Databricks, and scalable system architecture."
+                  />
+
+                  <TimelineItem
+                    title="Connecting Software, Data & AI"
+                    desc="Building projects where software engineering provides the foundation for analytics, machine learning, intelligent agents, and data-driven decision-support capabilities."
+                  />
+
                 </ul>
+
               </div>
+
             </div>
+
           </motion.div>
 
-          {/* Right column */}
+          {/* ================================================= */}
+          {/* RIGHT COLUMN */}
+          {/* ================================================= */}
+
           <div className="space-y-6">
-            {/* Education */}
+
+            {/* EDUCATION */}
+
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -308,28 +471,56 @@ export default function About() {
                 backdrop-blur-md
               "
             >
+
               <div className="p-6">
+
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+
                   <GraduationCap className="h-5 w-5 text-slate-700" />
+
                   Education
+
                 </h3>
 
                 <p className="mt-3 leading-relaxed text-slate-700">
+
                   BSc (Hons) in Information Technology, specializing in Data
                   Science at SLIIT.
+
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
+
+                  <Pill>Data Science</Pill>
+
+                  <Pill>Software Engineering</Pill>
+
                   <Pill>Python</Pill>
-                  <Pill>EDA</Pill>
+
                   <Pill>Machine Learning</Pill>
+
+                  <Pill>Data Mining</Pill>
+
                   <Pill>SQL</Pill>
-                  <Pill>Dashboards</Pill>
+
+                  <Pill>Web Development</Pill>
+
+                  <Pill>Databases</Pill>
+
+                  <Pill>Cloud Computing</Pill>
+
+                  <Pill>Big Data</Pill>
+
                 </div>
+
               </div>
+
             </motion.div>
 
-            {/* Skills */}
+            {/* ================================================= */}
+            {/* SKILLS SNAPSHOT */}
+            {/* ================================================= */}
+
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -344,32 +535,145 @@ export default function About() {
                 backdrop-blur-md
               "
             >
+
               <div className="p-6">
+
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+
                   <ClipboardCheck className="h-5 w-5 text-slate-700" />
+
                   Skills snapshot
+
                 </h3>
 
                 <div className="mt-4 space-y-3">
-                  <SkillBar label="EDA + Visualization" value={82} />
 
-                  <SkillBar label="Dashboards / Reporting" value={78} />
+                  <SkillBar
+                    label="Data Analytics & Visualization"
+                    value={88}
+                  />
 
-                  <SkillBar label="Python + Data Handling" value={78} />
+                  <SkillBar
+                    label="Software Development"
+                    value={84}
+                  />
 
-                  <SkillBar label="Machine Learning" value={66} />
+                  <SkillBar
+                    label="Power BI / BI Reporting"
+                    value={84}
+                  />
 
-                  <SkillBar label="Data Engineering Foundations" value={58} />
+                  <SkillBar
+                    label="Python & Data Handling"
+                    value={84}
+                  />
+
+                  <SkillBar
+                    label="Frontend Development"
+                    value={82}
+                  />
+
+                  <SkillBar
+                    label="Backend & REST APIs"
+                    value={80}
+                  />
+
+                  <SkillBar
+                    label="SQL & Databases"
+                    value={78}
+                  />
+
+                  <SkillBar
+                    label="Machine Learning"
+                    value={73}
+                  />
+
+                  <SkillBar
+                    label="Cloud / Data Engineering"
+                    value={68}
+                  />
+
                 </div>
 
                 <p className="mt-4 text-sm text-slate-700">
-                  I continuously strengthen these skills through practical
-                  projects and real-world experience.
+
+                  I strengthen these areas continuously through industry
+                  experience, university work, and end-to-end software and data
+                  projects.
+
                 </p>
+
               </div>
+
             </motion.div>
 
-            {/* Advantage */}
+            {/* ================================================= */}
+            {/* TECH STACK */}
+            {/* ================================================= */}
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="
+                rounded-3xl
+                border border-slate-200
+                bg-white/70
+                shadow-sm
+                backdrop-blur-md
+              "
+            >
+
+              <div className="p-6">
+
+                <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+
+                  <Layers3 className="h-5 w-5 text-slate-700" />
+
+                  Current stack
+
+                </h3>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+
+                  <Pill>Python</Pill>
+
+                  <Pill>React</Pill>
+
+                  <Pill>JavaScript</Pill>
+
+                  <Pill>TypeScript</Pill>
+
+                  <Pill>FastAPI</Pill>
+
+                  <Pill>PostgreSQL</Pill>
+
+                  <Pill>MongoDB</Pill>
+
+                  <Pill>SQL</Pill>
+
+                  <Pill>Power BI</Pill>
+
+                  <Pill>Git</Pill>
+
+                  <Pill>GitHub</Pill>
+
+                  <Pill>Docker</Pill>
+
+                  <Pill>AWS</Pill>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+            {/* ================================================= */}
+            {/* ADVANTAGE */}
+            {/* ================================================= */}
+
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -384,45 +688,85 @@ export default function About() {
                 backdrop-blur-md
               "
             >
+
               <div className="p-6">
+
                 <h3 className="text-lg font-semibold text-slate-900">
                   My advantage
                 </h3>
 
                 <ul className="mt-4 space-y-3 text-slate-700">
+
                   <li className="flex gap-2">
+
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-600" />
 
                     <span>
-                      I explain insights clearly instead of only presenting
-                      graphs.
+                      I can understand a business or user problem before jumping
+                      directly into code or analysis.
                     </span>
+
                   </li>
 
                   <li className="flex gap-2">
+
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
+
+                    <span>
+                      I can move from frontend interfaces to APIs, backend
+                      logic, databases, and complete application workflows.
+                    </span>
+
+                  </li>
+
+                  <li className="flex gap-2">
+
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-600" />
 
                     <span>
-                      I build clean, professional dashboards that are easy to
-                      understand.
+                      I can move from raw data to analysis, dashboards, machine
+                      learning, APIs, and usable applications.
                     </span>
+
                   </li>
 
                   <li className="flex gap-2">
+
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-fuchsia-600" />
 
                     <span>
-                      I combine analytical thinking, technical skills, and
-                      communication.
+                      I combine Data Science with Software Engineering instead
+                      of treating them as completely separate disciplines.
                     </span>
+
                   </li>
+
+                  <li className="flex gap-2">
+
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
+
+                    <span>
+                      Communication, presentation, leadership, and creative
+                      experience help me explain technical ideas clearly and
+                      work effectively with teams.
+                    </span>
+
+                  </li>
+
                 </ul>
+
               </div>
+
             </motion.div>
+
           </div>
+
         </div>
 
-        {/* How I create value */}
+        {/* ================================================= */}
+        {/* HOW I CREATE VALUE */}
+        {/* ================================================= */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -439,54 +783,76 @@ export default function About() {
             backdrop-blur-md
           "
         >
+
           <div className="p-6 md:p-8">
+
             <div className="max-w-3xl">
+
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-700">
                 How I create value
               </p>
 
               <h3 className="mt-2 text-2xl font-bold text-slate-900">
-                From raw data to clear decisions
+
+                From an idea to a complete solution
+
               </h3>
 
               <p className="mt-3 leading-relaxed text-slate-700">
-                I approach data problems as a complete journey—from
-                understanding the real requirement to delivering an insight
-                that people can understand and use.
+
+                Whether I am working on a software system, analytical problem,
+                or intelligent application, I approach it end to end:
+                understand the requirement, design the solution, organize the
+                data and architecture, build the system, and deliver something
+                people can actually use.
+
               </p>
+
             </div>
 
+            {/* WORKFLOW */}
+
             <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
               <WorkflowStep
                 number="01"
                 icon={
                   <ClipboardCheck className="h-5 w-5 text-indigo-700" />
                 }
                 title="Understand"
-                desc="Identify the real problem, business requirement, and expected outcome."
+                desc="Understand the real problem, user needs, business requirements, constraints, and expected outcome."
               />
 
               <WorkflowStep
                 number="02"
-                icon={<Database className="h-5 w-5 text-cyan-700" />}
-                title="Prepare"
-                desc="Clean, organize, validate, and explore the available data."
+                icon={
+                  <Layers3 className="h-5 w-5 text-blue-700" />
+                }
+                title="Design"
+                desc="Plan the application architecture, data model, APIs, workflows, interfaces, and technical approach."
               />
 
               <WorkflowStep
                 number="03"
-                icon={<Brain className="h-5 w-5 text-fuchsia-700" />}
-                title="Analyze"
-                desc="Discover patterns, test ideas, and build meaningful analytical solutions."
+                icon={
+                  <Code2 className="h-5 w-5 text-fuchsia-700" />
+                }
+                title="Build"
+                desc="Develop the frontend, backend, database, analytics, automation, or intelligent components required."
               />
 
               <WorkflowStep
                 number="04"
-                icon={<LineChart className="h-5 w-5 text-emerald-700" />}
-                title="Communicate"
-                desc="Present the result through clear insights, dashboards, and recommendations."
+                icon={
+                  <Sparkles className="h-5 w-5 text-emerald-700" />
+                }
+                title="Deliver"
+                desc="Integrate, test, improve, and transform the solution into something practical, understandable, and usable."
               />
+
             </div>
+
+            {/* END QUOTE */}
 
             <div
               className="
@@ -500,17 +866,30 @@ export default function About() {
                 px-5 py-4
               "
             >
+
               <p className="text-center font-medium text-slate-800">
-                My goal is simple: make data easier to understand and easier to
-                act on.
+
+                My goal is not simply to write code or analyze data — it is to
+                engineer useful systems where software, data, and intelligence
+                work together to solve real problems.
+
               </p>
+
             </div>
+
           </div>
+
         </motion.div>
+
       </div>
+
     </section>
   );
 }
+
+/* ========================================================= */
+/* MINI CARD */
+/* ========================================================= */
 
 function MiniCard({ icon, title, desc }) {
   return (
@@ -527,30 +906,45 @@ function MiniCard({ icon, title, desc }) {
         hover:shadow-md
       "
     >
+
       <div className="flex items-start gap-3">
+
         <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-sm">
           {icon}
         </div>
 
         <div>
-          <p className="font-semibold text-slate-900">{title}</p>
+
+          <p className="font-semibold text-slate-900">
+            {title}
+          </p>
 
           <p className="mt-1 text-sm leading-relaxed text-slate-700">
             {desc}
           </p>
+
         </div>
+
       </div>
+
     </div>
   );
 }
 
+/* ========================================================= */
+/* READY CARD */
+/* ========================================================= */
+
 function ReadyCard({ badge, title, points, icon }) {
+
   const badgeStyle =
-    badge === "Strong fit now"
+    badge === "Industry Experience"
       ? "bg-slate-900 text-white"
-      : badge === "Growing"
-        ? "bg-indigo-700 text-white"
-        : "bg-slate-700 text-white";
+      : badge === "Project Experience"
+        ? "bg-blue-700 text-white"
+        : badge === "Growing Specialization"
+          ? "bg-indigo-700 text-white"
+          : "bg-slate-700 text-white";
 
   return (
     <div
@@ -566,14 +960,19 @@ function ReadyCard({ badge, title, points, icon }) {
         hover:shadow-md
       "
     >
+
       <div className="flex items-start justify-between gap-3">
+
         <div>
+
           <p className="flex items-center gap-2 font-semibold text-slate-900">
+
             <span className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-1.5">
               {icon}
             </span>
 
             {title}
+
           </p>
 
           <span
@@ -589,20 +988,34 @@ function ReadyCard({ badge, title, points, icon }) {
           >
             {badge}
           </span>
+
         </div>
+
       </div>
 
       <ul className="mt-3 space-y-2 text-sm text-slate-700">
+
         {points.map((point, index) => (
+
           <li key={index} className="flex gap-2">
+
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-900/70" />
+
             {point}
+
           </li>
+
         ))}
+
       </ul>
+
     </div>
   );
 }
+
+/* ========================================================= */
+/* TIMELINE ITEM */
+/* ========================================================= */
 
 function TimelineItem({ title, desc }) {
   return (
@@ -615,12 +1028,22 @@ function TimelineItem({ title, desc }) {
         backdrop-blur-md
       "
     >
-      <p className="font-semibold text-slate-900">{title}</p>
 
-      <p className="mt-1 text-sm leading-relaxed text-slate-700">{desc}</p>
+      <p className="font-semibold text-slate-900">
+        {title}
+      </p>
+
+      <p className="mt-1 text-sm leading-relaxed text-slate-700">
+        {desc}
+      </p>
+
     </li>
   );
 }
+
+/* ========================================================= */
+/* PILL */
+/* ========================================================= */
 
 function Pill({ children }) {
   return (
@@ -642,7 +1065,12 @@ function Pill({ children }) {
   );
 }
 
+/* ========================================================= */
+/* ROLE CHIP */
+/* ========================================================= */
+
 function RoleChip({ icon, text, tone = "strong" }) {
+
   const className =
     tone === "learning"
       ? "border-slate-200 bg-white/70 text-slate-700"
@@ -662,21 +1090,39 @@ function RoleChip({ icon, text, tone = "strong" }) {
         ${className}
       `}
     >
-      <span className="text-slate-700">{icon}</span>
+
+      <span className="text-slate-700">
+        {icon}
+      </span>
+
       {text}
+
     </span>
   );
 }
 
+/* ========================================================= */
+/* SKILL BAR */
+/* ========================================================= */
+
 function SkillBar({ label, value }) {
   return (
     <div>
+
       <div className="flex items-center justify-between text-sm">
-        <span className="font-medium text-slate-800">{label}</span>
-        <span className="text-slate-500">{value}%</span>
+
+        <span className="font-medium text-slate-800">
+          {label}
+        </span>
+
+        <span className="text-slate-500">
+          {value}%
+        </span>
+
       </div>
 
       <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-200">
+
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${value}%` }}
@@ -687,10 +1133,16 @@ function SkillBar({ label, value }) {
           }}
           className="h-full rounded-full bg-slate-900/80"
         />
+
       </div>
+
     </div>
   );
 }
+
+/* ========================================================= */
+/* WORKFLOW STEP */
+/* ========================================================= */
 
 function WorkflowStep({ number, icon, title, desc }) {
   return (
@@ -710,11 +1162,13 @@ function WorkflowStep({ number, icon, title, desc }) {
         hover:shadow-[0_16px_35px_rgba(15,23,42,0.09)]
       "
     >
+
       <span className="absolute top-3 right-4 text-3xl font-bold text-slate-100 transition-colors duration-300 group-hover:text-indigo-100">
         {number}
       </span>
 
       <div className="relative">
+
         <div
           className="
             inline-flex
@@ -730,10 +1184,16 @@ function WorkflowStep({ number, icon, title, desc }) {
           {icon}
         </div>
 
-        <h4 className="mt-4 font-semibold text-slate-900">{title}</h4>
+        <h4 className="mt-4 font-semibold text-slate-900">
+          {title}
+        </h4>
 
-        <p className="mt-2 text-sm leading-relaxed text-slate-700">{desc}</p>
+        <p className="mt-2 text-sm leading-relaxed text-slate-700">
+          {desc}
+        </p>
+
       </div>
+
     </div>
   );
 }
