@@ -28,7 +28,32 @@ const projects = [
   },
 
   {
-    title: "AegisBank",
+    title: "FDM Mini Project",
+    subtitle: "Hotel Booking Cancellation Prediction System",
+    period: "2026",
+    description:
+      "Developed a machine learning solution to predict hotel booking cancellations using historical booking data. The project involved data preprocessing, exploratory data analysis, feature preparation, model development, hyperparameter tuning, and performance evaluation to identify cancellation patterns and support better hotel booking and operational decisions.",
+    tags: [
+      "Data Science",
+      "Machine Learning",
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "Random Forest",
+      "Gradient Boosting",
+      "EDA",
+      "Classification",
+      "Model Evaluation",
+    ],
+    githubUrl:
+      "https://github.com/KulanyaLisaldi/Hotel-Booking-Cancellation-Prediction.git",
+    isUni: true,
+    badgeImg: "/sliit-badge.png",
+    isCurrent: false,
+  },
+  
+  {
+    title: "BankGuard AI",
     subtitle: "Agentic AI Banking System",
     period: "2026 • Ongoing",
     description:
@@ -37,16 +62,17 @@ const projects = [
       "Agentic AI",
       "Multi-Agent Systems",
       "AI",
-      "Financial Intelligence",
+      "IR",
       "Decision Support",
       "LLM",
       "ML",
+      "Python",
     ],
     githubUrl:
-      "https://github.com/Deeghau0816/AegisBank---Agentic-AI-Bank-System.git",
+      "https://github.com/KulanyaLisaldi/BankGuard-AI.git",
     isUni: true,
     badgeImg: "/sliit-badge.png",
-    isCurrent: true,
+    isCurrent: false,
   },
 
   {
