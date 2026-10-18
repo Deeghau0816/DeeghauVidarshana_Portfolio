@@ -34,15 +34,11 @@ const projects = [
     description:
       "Developed a machine learning solution to predict hotel booking cancellations using historical booking data. The project involved data preprocessing, exploratory data analysis, feature preparation, model development, hyperparameter tuning, and performance evaluation to identify cancellation patterns and support better hotel booking and operational decisions.",
     tags: [
-      "Data Science",
       "Machine Learning",
       "Python",
-      "Pandas",
       "Scikit-learn",
       "Random Forest",
       "Gradient Boosting",
-      "EDA",
-      "Classification",
       "Model Evaluation",
     ],
     githubUrl:

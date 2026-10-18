@@ -1,11 +1,11 @@
 // src/pages/About.jsx
 
 import { motion } from "framer-motion";
+import PageBackground from "../Components/Pagebackground";
 import {
   GraduationCap,
   Brain,
   BarChart3,
-  LineChart,
   Database,
   Code2,
   Sparkles,
@@ -15,9 +15,6 @@ import {
   Briefcase,
   Server,
   Cloud,
-  Workflow,
-  GitBranch,
-  Boxes,
   MonitorSmartphone,
 } from "lucide-react";
 
@@ -28,42 +25,17 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-24 pb-16">
+    <section className="relative min-h-screen pt-24 pb-16">
 
-      {/* ================= BACKGROUND ================= */}
+      {/* SAME BACKGROUND VIDEO */}
+      <PageBackground />
 
-      <div className="pointer-events-none absolute inset-0">
-        <video
-          className="h-full w-full object-cover"
-          src="/videos/BackgroundVideo.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        />
+      {/* CONTENT */}
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5">
 
-        <div className="absolute inset-0 bg-white/40" />
-        <div className="absolute inset-0 bg-slate-200/20" />
-      </div>
-
-      {/* Background blobs */}
-
-      <div className="pointer-events-none absolute inset-0">
-
-        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-indigo-500/15 blur-3xl" />
-
-        <div className="absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-cyan-500/12 blur-3xl" />
-
-        <div className="absolute -bottom-24 left-1/3 h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/10 blur-3xl" />
-
-      </div>
-
-      <div className="relative mx-auto w-full max-w-6xl px-5">
-
-        {/* ================================================= */}
+        {/* ======================================================= */}
         {/* HEADER */}
-        {/* ================================================= */}
+        {/* ======================================================= */}
 
         <motion.div
           variants={fadeUp}
@@ -72,49 +44,35 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-
           <p className="text-sm font-medium tracking-wide text-slate-700">
             ABOUT • DATA SCIENCE • SOFTWARE ENGINEERING • AI
           </p>
 
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-
             Building at the intersection of{" "}
-
             <span className="text-indigo-700">
               Data Science
             </span>
-
             ,{" "}
-
             <span className="text-blue-700">
               Software Engineering
             </span>
-
             {" & "}
-
             <span className="text-cyan-700">
               Intelligent Systems
             </span>
-
             .
-
           </h1>
 
           <p className="mt-4 max-w-4xl leading-relaxed text-slate-700">
-
             I’m an Information Technology undergraduate specializing in{" "}
-
             <span className="font-medium text-slate-900">
               Data Science
             </span>
-
             , with industry experience as a{" "}
-
             <span className="font-medium text-slate-900">
               Data Analyst Intern at Michelin Lanka
             </span>
-
             . My technical background spans both Data Science and Software
             Engineering, allowing me to work from raw data and analytical
             requirements all the way to complete software systems.
@@ -132,12 +90,10 @@ export default function About() {
             <br />
 
             My development experience includes{" "}
-
             <span className="font-medium text-slate-900">
               React, JavaScript, TypeScript, Python, FastAPI, PostgreSQL,
               MongoDB, REST APIs, Git, GitHub, Docker, and cloud technologies
             </span>
-
             . I enjoy taking an idea from requirements and architecture through
             development, database integration, APIs, testing, and a usable
             final application.
@@ -146,20 +102,19 @@ export default function About() {
             <br />
 
             I’m especially interested in{" "}
-
             <span className="font-medium text-slate-900">
               Machine Learning, Explainable AI, Software Engineering, Data
               Engineering, Big Data, intelligent applications, and
               decision-support systems
             </span>
-
             . My long-term direction is to combine strong engineering with
             data and AI to build scalable systems that solve meaningful
             real-world problems.
-
           </p>
 
-          {/* QUICK INFORMATION */}
+          {/* ===================================================== */}
+          {/* QUICK INFORMATION                                     */}
+          {/* ===================================================== */}
 
           <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-700">
 
@@ -180,55 +135,67 @@ export default function About() {
 
           </div>
 
-          {/* ROLE CHIPS */}
+          {/* ===================================================== */}
+          {/* ROLE CHIPS                                            */}
+          {/* ===================================================== */}
 
           <div className="mt-5 flex flex-wrap gap-2">
 
             <RoleChip
-              tone="strong"
-              icon={<BarChart3 className="h-4 w-4" />}
+              icon={
+                <BarChart3 className="h-4 w-4" />
+              }
               text="Data Analytics"
             />
 
             <RoleChip
-              tone="strong"
-              icon={<Brain className="h-4 w-4" />}
+              icon={
+                <Brain className="h-4 w-4" />
+              }
               text="Data Science & ML"
             />
 
             <RoleChip
-              tone="strong"
-              icon={<Code2 className="h-4 w-4" />}
+              icon={
+                <Code2 className="h-4 w-4" />
+              }
               text="Software Engineering"
             />
 
             <RoleChip
-              tone="strong"
-              icon={<MonitorSmartphone className="h-4 w-4" />}
+              icon={
+                <MonitorSmartphone className="h-4 w-4" />
+              }
               text="Full-Stack Development"
             />
 
             <RoleChip
-              tone="strong"
-              icon={<Server className="h-4 w-4" />}
+              icon={
+                <Server className="h-4 w-4" />
+              }
               text="Backend & APIs"
             />
 
             <RoleChip
-              tone="strong"
-              icon={<Database className="h-4 w-4" />}
+              icon={
+                <Database className="h-4 w-4" />
+              }
               text="Databases"
             />
 
             <RoleChip
               tone="learning"
-              icon={<Sparkles className="h-4 w-4" />}
+              icon={
+                <Sparkles className="h-4 w-4" />
+              }
               text="AI & Intelligent Systems"
             />
 
             <RoleChip
               tone="learning"
-              icon={<Cloud className="h-4 w-4" />}
+              icon={
+                <Cloud className="h-4 w-4" />
+              }
               text="Cloud & Data Engineering"
             />
 
@@ -236,20 +203,27 @@ export default function About() {
 
         </motion.div>
 
-        {/* ================================================= */}
-        {/* MAIN GRID */}
-        {/* ================================================= */}
+        {/* ======================================================= */}
+        {/* MAIN GRID                                               */}
+        {/* ======================================================= */}
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
 
-          {/* ================= LEFT SIDE ================= */}
+          {/* ===================================================== */}
+          {/* LEFT SIDE                                             */}
+          {/* ===================================================== */}
 
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.6 }}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
             className="
               rounded-3xl
               border border-slate-200
@@ -259,7 +233,6 @@ export default function About() {
               lg:col-span-2
             "
           >
-
             <div className="p-6 md:p-8">
 
               <h2 className="text-xl font-semibold text-slate-900">
@@ -267,7 +240,6 @@ export default function About() {
               </h2>
 
               <p className="mt-3 leading-relaxed text-slate-700">
-
                 I enjoy working across the complete lifecycle of a technical
                 solution—from understanding the problem and designing the
                 system to handling data, building APIs, developing interfaces,
@@ -277,50 +249,63 @@ export default function About() {
                 <br />
                 <br />
 
-                This combination of Data Science and Software Engineering allows
-                me to go beyond analysis alone. I can explore data, identify
-                useful insights, experiment with intelligent approaches, and
-                then engineer applications that make those capabilities
-                accessible to real users.
-
+                This combination of Data Science and Software Engineering
+                allows me to go beyond analysis alone. I can explore data,
+                identify useful insights, experiment with intelligent
+                approaches, and then engineer applications that make those
+                capabilities accessible to real users.
               </p>
 
-              {/* ================= FOCUS CARDS ================= */}
+              {/* ================================================= */}
+              {/* FOCUS CARDS                                       */}
+              {/* ================================================= */}
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
 
                 <MiniCard
-                  icon={<BarChart3 className="h-5 w-5 text-indigo-700" />}
+                  icon={
+                    <BarChart3 className="h-5 w-5 text-indigo-700" />
+                  }
                   title="Data Analytics & BI"
                   desc="Exploratory analysis, KPI development, Power BI dashboards, reporting, data preparation, and turning business requirements into actionable insights."
                 />
 
                 <MiniCard
-                  icon={<Code2 className="h-5 w-5 text-blue-700" />}
+                  icon={
+                    <Code2 className="h-5 w-5 text-blue-700" />
+                  }
                   title="Software Engineering"
                   desc="Designing structured applications with reusable components, clean architecture, object-oriented thinking, maintainable code, debugging, and collaborative development practices."
                 />
 
                 <MiniCard
-                  icon={<Server className="h-5 w-5 text-cyan-700" />}
+                  icon={
+                    <Server className="h-5 w-5 text-cyan-700" />
+                  }
                   title="Backend & API Development"
                   desc="Building REST APIs, backend services, database integrations, validation, authentication workflows, and application logic using technologies such as Python and FastAPI."
                 />
 
                 <MiniCard
-                  icon={<MonitorSmartphone className="h-5 w-5 text-violet-700" />}
+                  icon={
+                    <MonitorSmartphone className="h-5 w-5 text-violet-700" />
+                  }
                   title="Full-Stack Development"
                   desc="Building responsive applications with modern frontend technologies and connecting them to backend APIs, databases, authentication, and business logic."
                 />
 
                 <MiniCard
-                  icon={<Database className="h-5 w-5 text-emerald-700" />}
+                  icon={
+                    <Database className="h-5 w-5 text-emerald-700" />
+                  }
                   title="Databases & Data Engineering"
                   desc="Working with PostgreSQL, MongoDB, SQL, APIs, structured data, migrations, automated workflows, and scalable data-processing concepts."
                 />
 
                 <MiniCard
-                  icon={<Brain className="h-5 w-5 text-fuchsia-700" />}
+                  icon={
+                    <Brain className="h-5 w-5 text-fuchsia-700" />
+                  }
                   title="Machine Learning & AI"
                   desc="Developing and evaluating machine learning solutions while exploring Explainable AI, responsible AI, intelligent agents, and decision-support systems."
                 />
@@ -328,7 +313,7 @@ export default function About() {
               </div>
 
               {/* ================================================= */}
-              {/* WHERE I CREATE VALUE */}
+              {/* WHERE I CREATE VALUE                              */}
               {/* ================================================= */}
 
               <div className="mt-8">
@@ -338,11 +323,9 @@ export default function About() {
                 </h3>
 
                 <p className="mt-2 text-sm leading-relaxed text-slate-700">
-
                   My strongest advantage is being able to work across multiple
                   layers of a solution instead of viewing data, software,
                   databases, and AI as completely separate areas.
-
                 </p>
 
                 <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -350,7 +333,9 @@ export default function About() {
                   <ReadyCard
                     badge="Industry Experience"
                     title="Data Analytics & BI"
-                    icon={<BarChart3 className="h-4 w-4 text-indigo-700" />}
+                    icon={
+                      <BarChart3 className="h-4 w-4 text-indigo-700" />
+                    }
                     points={[
                       "Exploratory analysis and data preparation",
                       "Power BI dashboards and reporting",
@@ -362,7 +347,9 @@ export default function About() {
                   <ReadyCard
                     badge="Project Experience"
                     title="Software Engineering"
-                    icon={<Code2 className="h-4 w-4 text-blue-700" />}
+                    icon={
+                      <Code2 className="h-4 w-4 text-blue-700" />
+                    }
                     points={[
                       "Full-stack application development",
                       "Frontend and backend architecture",
@@ -374,7 +361,9 @@ export default function About() {
                   <ReadyCard
                     badge="Growing Specialization"
                     title="Machine Learning & AI"
-                    icon={<Brain className="h-4 w-4 text-fuchsia-700" />}
+                    icon={
+                      <Brain className="h-4 w-4 text-fuchsia-700" />
+                    }
                     points={[
                       "Machine learning workflows",
                       "Classification and clustering",
@@ -386,7 +375,9 @@ export default function About() {
                   <ReadyCard
                     badge="Growing Specialization"
                     title="Data & Cloud Engineering"
-                    icon={<Database className="h-4 w-4 text-amber-700" />}
+                    icon={
+                      <Database className="h-4 w-4 text-amber-700" />
+                    }
                     points={[
                       "SQL and structured databases",
                       "Automated data workflows",
@@ -400,7 +391,7 @@ export default function About() {
               </div>
 
               {/* ================================================= */}
-              {/* CURRENT PROGRESS */}
+              {/* CURRENT PROGRESS                                  */}
               {/* ================================================= */}
 
               <div className="mt-8">
@@ -446,23 +437,29 @@ export default function About() {
               </div>
 
             </div>
-
           </motion.div>
 
-          {/* ================================================= */}
-          {/* RIGHT COLUMN */}
-          {/* ================================================= */}
+          {/* ===================================================== */}
+          {/* RIGHT COLUMN                                          */}
+          {/* ===================================================== */}
 
           <div className="space-y-6">
 
-            {/* EDUCATION */}
+            {/* =================================================== */}
+            {/* EDUCATION                                           */}
+            {/* =================================================== */}
 
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.6 }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
               className="
                 rounded-3xl
                 border border-slate-200
@@ -471,22 +468,16 @@ export default function About() {
                 backdrop-blur-md
               "
             >
-
               <div className="p-6">
 
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-
                   <GraduationCap className="h-5 w-5 text-slate-700" />
-
                   Education
-
                 </h3>
 
                 <p className="mt-3 leading-relaxed text-slate-700">
-
                   BSc (Hons) in Information Technology, specializing in Data
                   Science at SLIIT.
-
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -514,19 +505,24 @@ export default function About() {
                 </div>
 
               </div>
-
             </motion.div>
 
-            {/* ================================================= */}
-            {/* SKILLS SNAPSHOT */}
-            {/* ================================================= */}
+            {/* =================================================== */}
+            {/* SKILLS SNAPSHOT                                     */}
+            {/* =================================================== */}
 
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.05,
+              }}
               className="
                 rounded-3xl
                 border border-slate-200
@@ -535,15 +531,11 @@ export default function About() {
                 backdrop-blur-md
               "
             >
-
               <div className="p-6">
 
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-
                   <ClipboardCheck className="h-5 w-5 text-slate-700" />
-
                   Skills snapshot
-
                 </h3>
 
                 <div className="mt-4 space-y-3">
@@ -596,27 +588,30 @@ export default function About() {
                 </div>
 
                 <p className="mt-4 text-sm text-slate-700">
-
                   I strengthen these areas continuously through industry
-                  experience, university work, and end-to-end software and data
-                  projects.
-
+                  experience, university work, and end-to-end software and
+                  data projects.
                 </p>
 
               </div>
-
             </motion.div>
 
-            {/* ================================================= */}
-            {/* TECH STACK */}
-            {/* ================================================= */}
+            {/* =================================================== */}
+            {/* CURRENT STACK                                       */}
+            {/* =================================================== */}
 
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.08,
+              }}
               className="
                 rounded-3xl
                 border border-slate-200
@@ -625,15 +620,11 @@ export default function About() {
                 backdrop-blur-md
               "
             >
-
               <div className="p-6">
 
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-
                   <Layers3 className="h-5 w-5 text-slate-700" />
-
                   Current stack
-
                 </h3>
 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -667,19 +658,24 @@ export default function About() {
                 </div>
 
               </div>
-
             </motion.div>
 
-            {/* ================================================= */}
-            {/* ADVANTAGE */}
-            {/* ================================================= */}
+            {/* =================================================== */}
+            {/* MY ADVANTAGE                                        */}
+            {/* =================================================== */}
 
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.1,
+              }}
               className="
                 rounded-3xl
                 border border-slate-200
@@ -688,7 +684,6 @@ export default function About() {
                 backdrop-blur-md
               "
             >
-
               <div className="p-6">
 
                 <h3 className="text-lg font-semibold text-slate-900">
@@ -697,82 +692,56 @@ export default function About() {
 
                 <ul className="mt-4 space-y-3 text-slate-700">
 
-                  <li className="flex gap-2">
+                  <Bullet color="bg-indigo-600">
+                    I can understand a business or user problem before jumping
+                    directly into code or analysis.
+                  </Bullet>
 
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-600" />
+                  <Bullet color="bg-blue-600">
+                    I can move from frontend interfaces to APIs, backend logic,
+                    databases, and complete application workflows.
+                  </Bullet>
 
-                    <span>
-                      I can understand a business or user problem before jumping
-                      directly into code or analysis.
-                    </span>
+                  <Bullet color="bg-cyan-600">
+                    I can move from raw data to analysis, dashboards, machine
+                    learning, APIs, and usable applications.
+                  </Bullet>
 
-                  </li>
+                  <Bullet color="bg-fuchsia-600">
+                    I combine Data Science with Software Engineering instead of
+                    treating them as completely separate disciplines.
+                  </Bullet>
 
-                  <li className="flex gap-2">
-
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
-
-                    <span>
-                      I can move from frontend interfaces to APIs, backend
-                      logic, databases, and complete application workflows.
-                    </span>
-
-                  </li>
-
-                  <li className="flex gap-2">
-
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-600" />
-
-                    <span>
-                      I can move from raw data to analysis, dashboards, machine
-                      learning, APIs, and usable applications.
-                    </span>
-
-                  </li>
-
-                  <li className="flex gap-2">
-
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-fuchsia-600" />
-
-                    <span>
-                      I combine Data Science with Software Engineering instead
-                      of treating them as completely separate disciplines.
-                    </span>
-
-                  </li>
-
-                  <li className="flex gap-2">
-
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
-
-                    <span>
-                      Communication, presentation, leadership, and creative
-                      experience help me explain technical ideas clearly and
-                      work effectively with teams.
-                    </span>
-
-                  </li>
+                  <Bullet color="bg-amber-600">
+                    Communication, presentation, leadership, and creative
+                    experience help me explain technical ideas clearly and
+                    work effectively with teams.
+                  </Bullet>
 
                 </ul>
 
               </div>
-
             </motion.div>
 
           </div>
 
         </div>
 
-        {/* ================================================= */}
-        {/* HOW I CREATE VALUE */}
-        {/* ================================================= */}
+        {/* ======================================================= */}
+        {/* HOW I CREATE VALUE                                      */}
+        {/* ======================================================= */}
 
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
           className="
             mt-10
             overflow-hidden
@@ -783,7 +752,6 @@ export default function About() {
             backdrop-blur-md
           "
         >
-
           <div className="p-6 md:p-8">
 
             <div className="max-w-3xl">
@@ -793,24 +761,22 @@ export default function About() {
               </p>
 
               <h3 className="mt-2 text-2xl font-bold text-slate-900">
-
                 From an idea to a complete solution
-
               </h3>
 
               <p className="mt-3 leading-relaxed text-slate-700">
-
                 Whether I am working on a software system, analytical problem,
                 or intelligent application, I approach it end to end:
                 understand the requirement, design the solution, organize the
                 data and architecture, build the system, and deliver something
                 people can actually use.
-
               </p>
 
             </div>
 
-            {/* WORKFLOW */}
+            {/* =================================================== */}
+            {/* WORKFLOW                                            */}
+            {/* =================================================== */}
 
             <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -852,7 +818,9 @@ export default function About() {
 
             </div>
 
-            {/* END QUOTE */}
+            {/* =================================================== */}
+            {/* FINAL MESSAGE                                       */}
+            {/* =================================================== */}
 
             <div
               className="
@@ -863,22 +831,18 @@ export default function About() {
                 from-indigo-50/90
                 via-white/80
                 to-cyan-50/90
-                px-5 py-4
+                px-5
+                py-4
               "
             >
-
               <p className="text-center font-medium text-slate-800">
-
                 My goal is not simply to write code or analyze data — it is to
                 engineer useful systems where software, data, and intelligence
                 work together to solve real problems.
-
               </p>
-
             </div>
 
           </div>
-
         </motion.div>
 
       </div>
@@ -887,9 +851,9 @@ export default function About() {
   );
 }
 
-/* ========================================================= */
-/* MINI CARD */
-/* ========================================================= */
+/* ============================================================= */
+/* MINI CARD                                                     */
+/* ============================================================= */
 
 function MiniCard({ icon, title, desc }) {
   return (
@@ -906,7 +870,6 @@ function MiniCard({ icon, title, desc }) {
         hover:shadow-md
       "
     >
-
       <div className="flex items-start gap-3">
 
         <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-sm">
@@ -926,17 +889,20 @@ function MiniCard({ icon, title, desc }) {
         </div>
 
       </div>
-
     </div>
   );
 }
 
-/* ========================================================= */
-/* READY CARD */
-/* ========================================================= */
+/* ============================================================= */
+/* READY CARD                                                    */
+/* ============================================================= */
 
-function ReadyCard({ badge, title, points, icon }) {
-
+function ReadyCard({
+  badge,
+  title,
+  points,
+  icon,
+}) {
   const badgeStyle =
     badge === "Industry Experience"
       ? "bg-slate-900 text-white"
@@ -960,7 +926,6 @@ function ReadyCard({ badge, title, points, icon }) {
         hover:shadow-md
       "
     >
-
       <div className="flex items-start justify-between gap-3">
 
         <div>
@@ -980,7 +945,8 @@ function ReadyCard({ badge, title, points, icon }) {
               mt-2
               inline-flex
               rounded-full
-              px-3 py-1
+              px-3
+              py-1
               text-[11px]
               font-semibold
               ${badgeStyle}
@@ -996,15 +962,16 @@ function ReadyCard({ badge, title, points, icon }) {
       <ul className="mt-3 space-y-2 text-sm text-slate-700">
 
         {points.map((point, index) => (
-
-          <li key={index} className="flex gap-2">
-
+          <li
+            key={index}
+            className="flex gap-2"
+          >
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-900/70" />
 
-            {point}
-
+            <span>
+              {point}
+            </span>
           </li>
-
         ))}
 
       </ul>
@@ -1013,11 +980,14 @@ function ReadyCard({ badge, title, points, icon }) {
   );
 }
 
-/* ========================================================= */
-/* TIMELINE ITEM */
-/* ========================================================= */
+/* ============================================================= */
+/* TIMELINE ITEM                                                 */
+/* ============================================================= */
 
-function TimelineItem({ title, desc }) {
+function TimelineItem({
+  title,
+  desc,
+}) {
   return (
     <li
       className="
@@ -1028,7 +998,6 @@ function TimelineItem({ title, desc }) {
         backdrop-blur-md
       "
     >
-
       <p className="font-semibold text-slate-900">
         {title}
       </p>
@@ -1036,16 +1005,17 @@ function TimelineItem({ title, desc }) {
       <p className="mt-1 text-sm leading-relaxed text-slate-700">
         {desc}
       </p>
-
     </li>
   );
 }
 
-/* ========================================================= */
-/* PILL */
-/* ========================================================= */
+/* ============================================================= */
+/* PILL                                                          */
+/* ============================================================= */
 
-function Pill({ children }) {
+function Pill({
+  children,
+}) {
   return (
     <span
       className="
@@ -1054,7 +1024,8 @@ function Pill({ children }) {
         rounded-full
         border border-slate-200
         bg-white/70
-        px-3 py-1
+        px-3
+        py-1
         text-xs
         font-medium
         text-slate-800
@@ -1065,12 +1036,15 @@ function Pill({ children }) {
   );
 }
 
-/* ========================================================= */
-/* ROLE CHIP */
-/* ========================================================= */
+/* ============================================================= */
+/* ROLE CHIP                                                     */
+/* ============================================================= */
 
-function RoleChip({ icon, text, tone = "strong" }) {
-
+function RoleChip({
+  icon,
+  text,
+  tone = "strong",
+}) {
   const className =
     tone === "learning"
       ? "border-slate-200 bg-white/70 text-slate-700"
@@ -1084,13 +1058,13 @@ function RoleChip({ icon, text, tone = "strong" }) {
         gap-2
         rounded-full
         border
-        px-3 py-1
+        px-3
+        py-1
         text-xs
         font-semibold
         ${className}
       `}
     >
-
       <span className="text-slate-700">
         {icon}
       </span>
@@ -1101,11 +1075,14 @@ function RoleChip({ icon, text, tone = "strong" }) {
   );
 }
 
-/* ========================================================= */
-/* SKILL BAR */
-/* ========================================================= */
+/* ============================================================= */
+/* SKILL BAR                                                     */
+/* ============================================================= */
 
-function SkillBar({ label, value }) {
+function SkillBar({
+  label,
+  value,
+}) {
   return (
     <div>
 
@@ -1124,9 +1101,15 @@ function SkillBar({ label, value }) {
       <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-200">
 
         <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${value}%` }}
-          viewport={{ once: true }}
+          initial={{
+            width: 0,
+          }}
+          whileInView={{
+            width: `${value}%`,
+          }}
+          viewport={{
+            once: true,
+          }}
           transition={{
             duration: 0.9,
             ease: "easeOut",
@@ -1140,11 +1123,16 @@ function SkillBar({ label, value }) {
   );
 }
 
-/* ========================================================= */
-/* WORKFLOW STEP */
-/* ========================================================= */
+/* ============================================================= */
+/* WORKFLOW STEP                                                 */
+/* ============================================================= */
 
-function WorkflowStep({ number, icon, title, desc }) {
+function WorkflowStep({
+  number,
+  icon,
+  title,
+  desc,
+}) {
   return (
     <div
       className="
@@ -1162,7 +1150,6 @@ function WorkflowStep({ number, icon, title, desc }) {
         hover:shadow-[0_16px_35px_rgba(15,23,42,0.09)]
       "
     >
-
       <span className="absolute top-3 right-4 text-3xl font-bold text-slate-100 transition-colors duration-300 group-hover:text-indigo-100">
         {number}
       </span>
@@ -1172,7 +1159,8 @@ function WorkflowStep({ number, icon, title, desc }) {
         <div
           className="
             inline-flex
-            h-11 w-11
+            h-11
+            w-11
             items-center
             justify-center
             rounded-xl
@@ -1193,7 +1181,29 @@ function WorkflowStep({ number, icon, title, desc }) {
         </p>
 
       </div>
-
     </div>
+  );
+}
+
+/* ============================================================= */
+/* BULLET                                                        */
+/* ============================================================= */
+
+function Bullet({
+  children,
+  color = "bg-indigo-600",
+}) {
+  return (
+    <li className="flex gap-2">
+
+      <span
+        className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${color}`}
+      />
+
+      <span>
+        {children}
+      </span>
+
+    </li>
   );
 }
