@@ -51,7 +51,7 @@ const projects = [
   {
     title: "BankGuard AI",
     subtitle: "Agentic AI Banking System",
-    period: "2026 • Ongoing",
+    period: "2026",
     description:
       "Currently developing an advanced Agentic AI banking system that uses specialized intelligent agents to analyze financial situations, collaborate on complex banking problems, evaluate possible actions, and provide context-aware financial decision support.",
     tags: [
