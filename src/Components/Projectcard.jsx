@@ -8,6 +8,7 @@ export default function ProjectCard({ project }) {
     description,
     tags = [],
     githubUrl,
+    image,
     isUni,
     badgeImg,
   } = project;
@@ -18,86 +19,100 @@ export default function ProjectCard({ project }) {
         group relative
         flex flex-col
         w-full
-        h-auto md:h-[560px]
+        h-auto md:h-[500px]
         overflow-hidden
 
         rounded-3xl
         border border-slate-200/70
-        bg-white/70
-        backdrop-blur
+        bg-white/75
+        backdrop-blur-md
 
         shadow-[0_18px_50px_rgba(2,6,23,0.06)]
 
         transition-all duration-300
-        hover:-translate-y-1
-        hover:shadow-[0_24px_70px_rgba(2,6,23,0.10)]
+        hover:-translate-y-1.5
+        hover:shadow-[0_24px_70px_rgba(2,6,23,0.12)]
       "
     >
       {/* ====================================================== */}
-      {/* BACKGROUND ACCENT GLOWS */}
+      {/* PROJECT IMAGE */}
       {/* ====================================================== */}
 
-      <div
-        className="
-          pointer-events-none
-          absolute
-          -top-16
-          -right-16
-          h-44
-          w-44
-          rounded-full
-          bg-indigo-400/15
-          blur-3xl
-        "
-      />
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          -bottom-16
-          -left-16
-          h-44
-          w-44
-          rounded-full
-          bg-sky-400/10
-          blur-3xl
-        "
-      />
-
-      {/* ====================================================== */}
-      {/* TOP RIGHT — PERIOD + UNIVERSITY BADGE */}
-      {/* ====================================================== */}
-
-      <div className="absolute right-4 top-4 z-20 flex items-center gap-2">
-        {period && (
-          <span
+      <div className="relative h-[210px] w-full shrink-0 overflow-hidden bg-slate-100">
+        {image ? (
+          <img
+            src={image}
+            alt={`${title} project preview`}
             className="
-              whitespace-nowrap
-              rounded-full
-              border border-slate-200
-              bg-white/90
-              px-3 py-1
-              text-xs
-              font-semibold
-              text-slate-600
-              shadow-sm
-              backdrop-blur
+              h-full
+              w-full
+              object-cover
+              object-center
+
+              transition-transform
+              duration-500
+
+              group-hover:scale-[1.04]
+            "
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className="
+              flex
+              h-full
+              w-full
+              items-center
+              justify-center
+
+              bg-gradient-to-br
+              from-indigo-50
+              via-white
+              to-sky-50
             "
           >
-            {period}
-          </span>
+            <span className="text-sm font-medium text-slate-400">
+              Project Preview
+            </span>
+          </div>
         )}
+
+        {/* Soft image overlay */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-black/20
+            via-transparent
+            to-transparent
+          "
+        />
+
+        {/* ==================================================== */}
+        {/* UNIVERSITY BADGE */}
+        {/* ==================================================== */}
 
         {isUni && badgeImg && (
           <div
             className="
+              absolute
+              left-3
+              top-3
+
+              flex
+              h-11
+              w-11
+              items-center
+              justify-center
+
               rounded-2xl
-              border border-slate-200
+              border border-white/60
               bg-white/90
-              p-2
+
               shadow-sm
-              backdrop-blur
+              backdrop-blur-md
             "
           >
             <img
@@ -108,20 +123,52 @@ export default function ProjectCard({ project }) {
             />
           </div>
         )}
+
+        {/* ==================================================== */}
+        {/* PERIOD */}
+        {/* ==================================================== */}
+
+        {period && (
+          <span
+            className="
+              absolute
+              right-3
+              top-3
+
+              whitespace-nowrap
+              rounded-full
+
+              border border-white/60
+              bg-white/90
+
+              px-3
+              py-1
+
+              text-[11px]
+              font-semibold
+              text-slate-700
+
+              shadow-sm
+              backdrop-blur-md
+            "
+          >
+            {period}
+          </span>
+        )}
       </div>
 
       {/* ====================================================== */}
-      {/* CARD CONTENT */}
+      {/* CONTENT */}
       {/* ====================================================== */}
 
-      <div className="relative z-10 flex h-full flex-1 flex-col p-7">
+      <div className="relative flex flex-1 flex-col p-5">
 
         {/* ==================================================== */}
         {/* TITLE */}
         {/* ==================================================== */}
 
-        <div className="pr-20">
-          <h3 className="text-xl font-extrabold text-slate-900">
+        <div>
+          <h3 className="text-lg font-extrabold leading-tight text-slate-900">
             {title}
           </h3>
 
@@ -129,11 +176,15 @@ export default function ProjectCard({ project }) {
             <p
               className="
                 mt-1
-                text-sm
+                line-clamp-1
+
+                text-xs
                 font-semibold
+
                 bg-gradient-to-r
                 from-indigo-700
                 to-sky-700
+
                 bg-clip-text
                 text-transparent
               "
@@ -144,11 +195,19 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* ==================================================== */}
-        {/* DESCRIPTION */}
+        {/* SHORT DESCRIPTION */}
         {/* ==================================================== */}
 
         {description && (
-          <p className="mt-4 text-sm leading-relaxed text-slate-600">
+          <p
+            className="
+              mt-3
+              line-clamp-3
+              text-sm
+              leading-relaxed
+              text-slate-600
+            "
+          >
             {description}
           </p>
         )}
@@ -158,32 +217,53 @@ export default function ProjectCard({ project }) {
         {/* ==================================================== */}
 
         {tags.length > 0 && (
-          <div className="mt-5 flex flex-wrap content-start gap-2">
-            {tags.map((tag) => (
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {tags.slice(0, 6).map((tag) => (
               <span
                 key={tag}
                 className="
                   rounded-full
-                  border border-slate-200/70
+                  border border-slate-200/80
                   bg-slate-50/90
-                  px-3 py-1
-                  text-xs
+
+                  px-2.5
+                  py-1
+
+                  text-[10px]
                   font-semibold
-                  text-slate-700
+                  text-slate-600
                 "
               >
                 {tag}
               </span>
             ))}
+
+            {tags.length > 6 && (
+              <span
+                className="
+                  rounded-full
+                  border border-slate-200/80
+                  bg-slate-50/90
+
+                  px-2.5
+                  py-1
+
+                  text-[10px]
+                  font-semibold
+                  text-slate-500
+                "
+              >
+                +{tags.length - 6}
+              </span>
+            )}
           </div>
         )}
 
         {/* ==================================================== */}
-        {/* FOOTER */}
+        {/* GITHUB BUTTON */}
         {/* ==================================================== */}
 
-        <div className="mt-auto pt-6">
-
+        <div className="mt-auto pt-4">
           {githubUrl && (
             <a
               href={githubUrl}
@@ -194,40 +274,43 @@ export default function ProjectCard({ project }) {
                 items-center
                 gap-2
 
-                rounded-2xl
+                rounded-xl
                 bg-indigo-700
-                px-4 py-2.5
 
-                text-sm
+                px-4
+                py-2.5
+
+                text-xs
                 font-semibold
                 text-white
 
-                shadow-[0_10px_25px_rgba(79,70,229,0.35)]
+                shadow-[0_8px_20px_rgba(79,70,229,0.28)]
 
                 transition-all
                 duration-300
 
                 hover:bg-indigo-800
-                hover:shadow-[0_14px_35px_rgba(79,70,229,0.45)]
+                hover:shadow-[0_12px_28px_rgba(79,70,229,0.38)]
               "
             >
-              <Github size={18} />
+              <Github size={16} />
 
               GitHub
 
               <ArrowUpRight
-                size={18}
+                size={16}
                 className="
                   transition-transform
                   duration-300
+
                   group-hover:translate-x-0.5
                   group-hover:-translate-y-0.5
                 "
               />
             </a>
           )}
-
         </div>
+
       </div>
     </article>
   );

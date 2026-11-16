@@ -5,38 +5,54 @@ export default function ProjectCardCurrent({ project }) {
   return (
     <motion.div
       className="relative h-full"
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{
+        opacity: 0,
+        y: 25,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
       transition={{
         duration: 0.6,
         ease: "easeOut",
       }}
-      viewport={{ once: true }}
+      viewport={{
+        once: true,
+      }}
     >
-      {/* Subtle breathing glow BEHIND the card */}
+      {/* ====================================================== */}
+      {/* ANIMATED GLOW BEHIND CARD */}
+      {/* ====================================================== */}
+
       <motion.div
         className="
           pointer-events-none
           absolute
           -inset-[3px]
           rounded-[1.65rem]
+
           bg-gradient-to-br
           from-violet-500
           via-indigo-400
           to-violet-500
+
           blur-[7px]
         "
         animate={{
-          opacity: [0.18, 0.5, 0.18],
+          opacity: [0.16, 0.42, 0.16],
         }}
         transition={{
-          duration: 2.8,
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
-      {/* Thin animated border */}
+      {/* ====================================================== */}
+      {/* ANIMATED BORDER */}
+      {/* ====================================================== */}
+
       <motion.div
         className="
           pointer-events-none
@@ -49,20 +65,28 @@ export default function ProjectCardCurrent({ project }) {
         animate={{
           borderColor: [
             "rgba(139,92,246,0.40)",
-            "rgba(99,102,241,0.85)",
+            "rgba(99,102,241,0.90)",
             "rgba(139,92,246,0.40)",
           ],
         }}
         transition={{
-          duration: 2.5,
+          duration: 2.8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
-      {/* Actual card */}
+      {/* ====================================================== */}
+      {/* ACTUAL CARD */}
+      {/* ====================================================== */}
+
       <motion.div
-        className="relative h-full rounded-[1.6rem]"
+        className="
+          relative
+          h-full
+          overflow-hidden
+          rounded-[1.6rem]
+        "
         whileHover={{
           y: -4,
           scale: 1.01,
@@ -74,32 +98,45 @@ export default function ProjectCardCurrent({ project }) {
       >
         <ProjectCard project={project} />
 
-        {/* Small CURRENT status beside GitHub */}
+        {/* ==================================================== */}
+        {/* CURRENT PROJECT BADGE */}
+        {/* ==================================================== */}
+
         <motion.div
           className="
+            pointer-events-none
             absolute
-            bottom-[33px]
-            right-5
+            left-3
+            top-[162px]
             z-30
+
             flex
             items-center
-            gap-1.5
+            gap-2
+
             whitespace-nowrap
             rounded-full
+
             border
-            border-violet-200
+            border-white/70
+
             bg-white/95
-            px-2.5
-            py-2
-            text-[7.5px]
+
+            px-3
+            py-1.5
+
+            text-[9px]
             font-bold
-            tracking-[0.04em]
-            text-violet-600
-            shadow-sm
-            backdrop-blur
+            uppercase
+            tracking-[0.06em]
+            text-violet-700
+
+            shadow-[0_6px_18px_rgba(15,23,42,0.12)]
+
+            backdrop-blur-md
           "
           animate={{
-            opacity: [0.75, 1, 0.75],
+            opacity: [0.82, 1, 0.82],
           }}
           transition={{
             duration: 2,
@@ -107,16 +144,41 @@ export default function ProjectCardCurrent({ project }) {
             ease: "easeInOut",
           }}
         >
-          {/* Live dot */}
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+          {/* Live indicator */}
+          <span className="relative flex h-2 w-2">
 
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <span
+              className="
+                absolute
+                inline-flex
+                h-full
+                w-full
+                animate-ping
+                rounded-full
+                bg-emerald-400
+                opacity-60
+              "
+            />
+
+            <span
+              className="
+                relative
+                inline-flex
+                h-2
+                w-2
+                rounded-full
+                bg-emerald-500
+              "
+            />
+
           </span>
 
-          CURRENTLY IN DEVELOPMENT
+          Currently in Development
+
         </motion.div>
+
       </motion.div>
+
     </motion.div>
   );
 }
