@@ -1,3 +1,4 @@
+
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -14,7 +15,7 @@ import PageBackground from "../Components/Pagebackground";
 export default function Home() {
   const navigate = useNavigate();
 
-  const fullText = useMemo(() => "I am Deeghau\nVidarshana", []);
+  const fullText = useMemo(() => "Deeghau\nVidarshana", []);
 
   const [text, setText] = useState("");
   const [i, setI] = useState(0);
@@ -89,22 +90,29 @@ export default function Home() {
             </span>
           </h1>
 
-          {/* Introduction */}
+          {/* Updated Introduction */}
           <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600">
             <span className="font-semibold text-slate-800">
-              Third-year IT Undergraduate
+              Data Science Undergraduate | AI/ML Enthusiast
             </span>{" "}
-            focused on{" "}
-            <span className="dsHighlight font-semibold">Data Science</span>,{" "}
-            <span className="mlHighlight font-semibold">
-              Machine Learning
+            <span className="block">
+              Fourth-year{" "}
+              <span className="dsHighlight font-semibold">
+                Data Science
+              </span>{" "}
+              undergraduate at SLIIT. I build reliable, data-driven systems
+              across{" "}
+              <span className="mlHighlight font-semibold">
+                machine learning
+              </span>
+              , analytics, and real-time data. Currently a Data Analyst
+              Intern at Michelin Lanka, turning operational data into
+              decisions. My research interest is{" "}
+              <span className="sysHighlight font-semibold">
+                explainable, trustworthy AI
+              </span>
+              .
             </span>
-            , and building{" "}
-            <span className="sysHighlight font-semibold">
-              practical data-driven systems
-            </span>
-            . I also enjoy crafting clean, user-friendly web experiences when
-            needed.
           </p>
 
           {/* Internship card */}
