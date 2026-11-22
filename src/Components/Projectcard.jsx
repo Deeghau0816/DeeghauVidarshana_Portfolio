@@ -1,3 +1,4 @@
+
 import { Github, ArrowUpRight } from "lucide-react";
 
 export default function ProjectCard({ project }) {
@@ -17,9 +18,7 @@ export default function ProjectCard({ project }) {
     <article
       className="
         group relative
-        flex flex-col
-        w-full
-        h-auto md:h-[500px]
+        flex h-full w-full flex-col
         overflow-hidden
 
         rounded-3xl
@@ -38,7 +37,16 @@ export default function ProjectCard({ project }) {
       {/* PROJECT IMAGE */}
       {/* ====================================================== */}
 
-      <div className="relative h-[210px] w-full shrink-0 overflow-hidden bg-slate-100">
+      <div
+        className="
+          relative
+          h-[210px]
+          w-full
+          shrink-0
+          overflow-hidden
+          bg-slate-100
+        "
+      >
         {image ? (
           <img
             src={image}
@@ -51,7 +59,6 @@ export default function ProjectCard({ project }) {
 
               transition-transform
               duration-500
-
               group-hover:scale-[1.04]
             "
             loading="lazy"
@@ -59,11 +66,8 @@ export default function ProjectCard({ project }) {
         ) : (
           <div
             className="
-              flex
-              h-full
-              w-full
-              items-center
-              justify-center
+              flex h-full w-full
+              items-center justify-center
 
               bg-gradient-to-br
               from-indigo-50
@@ -77,12 +81,11 @@ export default function ProjectCard({ project }) {
           </div>
         )}
 
-        {/* Soft image overlay */}
+        {/* SOFT IMAGE OVERLAY */}
         <div
           className="
             pointer-events-none
-            absolute
-            inset-0
+            absolute inset-0
             bg-gradient-to-t
             from-black/20
             via-transparent
@@ -97,20 +100,13 @@ export default function ProjectCard({ project }) {
         {isUni && badgeImg && (
           <div
             className="
-              absolute
-              left-3
-              top-3
-
-              flex
-              h-11
-              w-11
-              items-center
-              justify-center
+              absolute left-3 top-3
+              flex h-11 w-11
+              items-center justify-center
 
               rounded-2xl
               border border-white/60
               bg-white/90
-
               shadow-sm
               backdrop-blur-md
             "
@@ -125,25 +121,20 @@ export default function ProjectCard({ project }) {
         )}
 
         {/* ==================================================== */}
-        {/* PERIOD */}
+        {/* PROJECT PERIOD */}
         {/* ==================================================== */}
 
         {period && (
           <span
             className="
-              absolute
-              right-3
-              top-3
-
+              absolute right-3 top-3
               whitespace-nowrap
               rounded-full
 
               border border-white/60
               bg-white/90
 
-              px-3
-              py-1
-
+              px-3 py-1
               text-[11px]
               font-semibold
               text-slate-700
@@ -158,17 +149,29 @@ export default function ProjectCard({ project }) {
       </div>
 
       {/* ====================================================== */}
-      {/* CONTENT */}
+      {/* CARD CONTENT */}
       {/* ====================================================== */}
 
-      <div className="relative flex flex-1 flex-col p-5">
-
+      <div
+        className="
+          relative
+          flex flex-1 flex-col
+          p-5
+        "
+      >
         {/* ==================================================== */}
-        {/* TITLE */}
+        {/* TITLE AND SUBTITLE */}
         {/* ==================================================== */}
 
-        <div>
-          <h3 className="text-lg font-extrabold leading-tight text-slate-900">
+        <div className="min-h-[48px]">
+          <h3
+            className="
+              text-lg
+              font-extrabold
+              leading-tight
+              text-slate-900
+            "
+          >
             {title}
           </h3>
 
@@ -176,10 +179,9 @@ export default function ProjectCard({ project }) {
             <p
               className="
                 mt-1
-                line-clamp-1
-
                 text-xs
                 font-semibold
+                leading-relaxed
 
                 bg-gradient-to-r
                 from-indigo-700
@@ -195,39 +197,56 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* ==================================================== */}
-        {/* SHORT DESCRIPTION */}
+        {/* FULL PROJECT DESCRIPTION */}
         {/* ==================================================== */}
 
         {description && (
-          <p
+          <div
             className="
               mt-3
-              line-clamp-3
-              text-sm
-              leading-relaxed
-              text-slate-600
+              min-h-[120px]
+              shrink-0
             "
           >
-            {description}
-          </p>
+            <p
+              className="
+                text-sm
+                leading-relaxed
+                text-slate-600
+
+                whitespace-normal
+                break-words
+              "
+            >
+              {description}
+            </p>
+          </div>
         )}
 
         {/* ==================================================== */}
-        {/* TAGS */}
+        {/* PROJECT TECHNOLOGY TAGS */}
         {/* ==================================================== */}
 
         {tags.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-1.5">
+          <div
+            className="
+              mt-4
+              flex flex-wrap
+              content-start
+              gap-1.5
+            "
+          >
             {tags.slice(0, 6).map((tag) => (
               <span
                 key={tag}
                 className="
+                  h-fit
                   rounded-full
+
                   border border-slate-200/80
                   bg-slate-50/90
 
-                  px-2.5
-                  py-1
+                  px-2.5 py-1
 
                   text-[10px]
                   font-semibold
@@ -241,12 +260,13 @@ export default function ProjectCard({ project }) {
             {tags.length > 6 && (
               <span
                 className="
+                  h-fit
                   rounded-full
+
                   border border-slate-200/80
                   bg-slate-50/90
 
-                  px-2.5
-                  py-1
+                  px-2.5 py-1
 
                   text-[10px]
                   font-semibold
@@ -277,8 +297,7 @@ export default function ProjectCard({ project }) {
                 rounded-xl
                 bg-indigo-700
 
-                px-4
-                py-2.5
+                px-4 py-2.5
 
                 text-xs
                 font-semibold
@@ -310,7 +329,6 @@ export default function ProjectCard({ project }) {
             </a>
           )}
         </div>
-
       </div>
     </article>
   );

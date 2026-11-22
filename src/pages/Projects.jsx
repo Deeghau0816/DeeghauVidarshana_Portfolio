@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -7,7 +8,41 @@ import PageBackground from "../Components/Pagebackground";
 
 const projects = [
   // =========================================================
-  // DINEFLOW
+  // VERITY - CURRENT PROJECT
+  // =========================================================
+
+  {
+    title: "Verity",
+    subtitle: "Trustworthy AI Stock Forecasting System",
+    period: "2026 • Ongoing",
+
+    image: "/projects/verity.png",
+
+    description:
+      "Developing an AI-powered stock forecasting system combining time-series models, calibrated prediction intervals, explainable AI, and market drift detection for reliable financial insights.",
+
+    tags: [
+      "Python",
+      "FastAPI",
+      "Docker",
+      "React",
+      "Machine Learning",
+      "Time-Series",
+      "Chronos / TimesFM",
+      "XGBoost",
+      "SHAP",
+      "Conformal Prediction",
+      "yfinance",
+    ],
+
+    githubUrl: null,
+
+    isUni: false,
+    isCurrent: true,
+  },
+
+  // =========================================================
+  // DINEFLOW - CURRENT PROJECT
   // =========================================================
 
   {
@@ -18,7 +53,7 @@ const projects = [
     image: "/projects/dinmore.png",
 
     description:
-      "Full-stack restaurant management system for menu browsing, reservations, customer interactions, and secure administration.",
+      "Developing a full-stack restaurant management platform featuring digital menus, table reservations, customer interactions, secure administration, and integrated database-driven operations.",
 
     tags: [
       "React",
@@ -29,7 +64,8 @@ const projects = [
       "REST API",
     ],
 
-    githubUrl: "https://github.com/Deeghau0816/Dine-Flow.git",
+    githubUrl:
+      "https://github.com/Deeghau0816/Dine-Flow.git",
 
     isUni: false,
     isCurrent: true,
@@ -44,10 +80,11 @@ const projects = [
     subtitle: "Hotel Booking Cancellation Prediction",
     period: "2026",
 
-    image: "/projects/Hotel-Booking-Cancellation-Analytics.png",
+    image:
+      "/projects/Hotel-Booking-Cancellation-Analytics.png",
 
     description:
-      "Machine learning solution for predicting hotel booking cancellations using historical booking data and classification models.",
+      "Developed a machine learning solution predicting hotel booking cancellations using historical reservation data, feature engineering, classification algorithms, and systematic model evaluation.",
 
     tags: [
       "Machine Learning",
@@ -77,7 +114,7 @@ const projects = [
     image: "/projects/bankguard.png",
 
     description:
-      "Agentic AI banking system using specialized agents for information retrieval, recommendations, eligibility analysis, and intelligent decision support.",
+      "Developed a multi-agent AI banking assistant integrating retrieval-augmented generation, financial product recommendations, eligibility assessment, and context-aware responses through specialized intelligent agents.",
 
     tags: [
       "Agentic AI",
@@ -108,7 +145,7 @@ const projects = [
     image: "/projects/UniPulse.png",
 
     description:
-      "University social platform with authentication, role-based access, notifications, OAuth login, and role management.",
+      "Developed a university social networking platform integrating secure authentication, role-based access control, OAuth login, notifications, and structured user management features.",
 
     tags: [
       "Spring Boot",
@@ -124,6 +161,7 @@ const projects = [
 
     isUni: true,
     badgeImg: "/sliit-badge.png",
+    isCurrent: false,
   },
 
   // =========================================================
@@ -138,7 +176,7 @@ const projects = [
     image: "/projects/dwbi.png",
 
     description:
-      "Retail data warehouse and BI solution integrating multiple sources for ETL, dimensional modeling, analytics, and reporting.",
+      "Designed a retail data warehouse integrating ETL pipelines, dimensional modeling, OLAP analysis, and interactive business intelligence dashboards for sales reporting.",
 
     tags: [
       "SQL Server",
@@ -154,6 +192,7 @@ const projects = [
 
     isUni: true,
     badgeImg: "/sliit-badge.png",
+    isCurrent: false,
   },
 
   // =========================================================
@@ -168,7 +207,7 @@ const projects = [
     image: "/projects/SafeZone.png",
 
     description:
-      "Disaster management platform with district-based alerts, user management, admin dashboards, and emergency reporting.",
+      "Built a full-stack disaster management platform providing district-based emergency alerts, incident reporting, user administration, and centralized dashboards for disaster coordination.",
 
     tags: [
       "React",
@@ -183,6 +222,7 @@ const projects = [
 
     isUni: true,
     badgeImg: "/sliit-badge.png",
+    isCurrent: false,
   },
 
   // =========================================================
@@ -197,7 +237,7 @@ const projects = [
     image: "/projects/stockflux.png",
 
     description:
-      "Interactive stock dashboard combining real-time market data with machine-learning-based next-candle prediction.",
+      "Built an interactive stock market dashboard integrating live market data, technical indicators, machine learning predictions, and next-candle forecasting for financial analysis.",
 
     tags: [
       "Python",
@@ -210,6 +250,7 @@ const projects = [
       "https://github.com/Deeghau0816/StockFlux.git",
 
     isUni: false,
+    isCurrent: false,
   },
 
   // =========================================================
@@ -224,7 +265,7 @@ const projects = [
     image: "/projects/welltrack.png",
 
     description:
-      "Android wellness tracking application with offline-first data storage and personal wellness management features.",
+      "Developed an Android wellness tracking application supporting personal health monitoring, offline-first data storage, daily activity management, and accessible mobile interactions.",
 
     tags: [
       "Kotlin",
@@ -238,6 +279,7 @@ const projects = [
 
     isUni: true,
     badgeImg: "/sliit-badge.png",
+    isCurrent: false,
   },
 
   // =========================================================
@@ -252,7 +294,7 @@ const projects = [
     image: "/projects/mobiletravel.png",
 
     description:
-      "Android tourism application designed to help users explore destinations and travel information across Sri Lanka.",
+      "Designed an Android tourism application showcasing Sri Lankan travel destinations, destination information, intuitive navigation, and mobile-friendly interfaces for tourism exploration.",
 
     tags: [
       "Kotlin",
@@ -266,6 +308,7 @@ const projects = [
 
     isUni: true,
     badgeImg: "/sliit-badge.png",
+    isCurrent: false,
   },
 
   // =========================================================
@@ -280,7 +323,7 @@ const projects = [
     image: "/projects/travelmainia.png",
 
     description:
-      "Full-stack tourism platform for exploring Sri Lankan destinations with dynamic content and booking-oriented features.",
+      "Developed a full-stack tourism web application featuring Sri Lankan destinations, dynamic travel content, booking-oriented functionality, and database-driven information management.",
 
     tags: [
       "Java",
@@ -295,6 +338,7 @@ const projects = [
 
     isUni: true,
     badgeImg: "/sliit-badge.png",
+    isCurrent: false,
   },
 
   // =========================================================
@@ -309,7 +353,7 @@ const projects = [
     image: "/projects/pharmacy.png",
 
     description:
-      "E-commerce pharmacy platform with product management, ordering workflows, customer features, and checkout functionality.",
+      "Built an online pharmacy e-commerce platform supporting medicine catalog management, customer ordering workflows, shopping cart functionality, and database-integrated checkout operations.",
 
     tags: [
       "PHP",
@@ -319,13 +363,17 @@ const projects = [
       "HTML/CSS",
     ],
 
-    // Add GitHub URL here later if available.
     githubUrl: null,
 
     isUni: true,
     badgeImg: "/sliit-badge.png",
+    isCurrent: false,
   },
 ];
+
+// ===========================================================
+// PROJECTS PAGE
+// ===========================================================
 
 export default function Projects() {
   const [count, setCount] = useState(0);
@@ -437,23 +485,16 @@ export default function Projects() {
                 inline-flex
                 items-center
                 justify-center
-
                 rounded-full
-
                 border
                 border-red-200
-
                 bg-white/60
-
                 px-4
                 py-1.5
-
                 text-sm
                 font-extrabold
                 text-red-600
-
                 shadow-[0_8px_25px_rgba(239,68,68,0.15)]
-
                 backdrop-blur
               "
               initial={{
@@ -503,14 +544,10 @@ export default function Projects() {
         <div
           className="
             mt-10
-
             grid
             grid-cols-1
-
             items-stretch
-
             gap-8
-
             sm:grid-cols-2
             lg:grid-cols-3
           "

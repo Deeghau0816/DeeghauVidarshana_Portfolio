@@ -1,10 +1,11 @@
+
 import { motion } from "framer-motion";
 import ProjectCard from "./Projectcard";
 
 export default function ProjectCardCurrent({ project }) {
   return (
     <motion.div
-      className="relative h-full"
+      className="relative isolate h-full"
       initial={{
         opacity: 0,
         y: 25,
@@ -22,7 +23,50 @@ export default function ProjectCardCurrent({ project }) {
       }}
     >
       {/* ====================================================== */}
-      {/* ANIMATED GLOW BEHIND CARD */}
+      {/* GREEN BORDER WITH MOVING LIGHT */}
+      {/* ====================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -inset-[2px]
+          z-0
+          overflow-hidden
+          rounded-[1.65rem]
+          bg-emerald-500/30
+        "
+      >
+        {/* Rotating green light */}
+        <motion.div
+          className="absolute inset-[-100%]"
+          style={{
+            background:
+              "conic-gradient(from 0deg, transparent 0deg, transparent 265deg, rgba(16,185,129,0.25) 290deg, #22c55e 325deg, #bbf7d0 340deg, transparent 360deg)",
+          }}
+          animate={{
+            rotate: 360,
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+
+        {/* Cover center to create thin border */}
+        <div
+          className="
+            absolute
+            inset-[2px]
+            rounded-[1.52rem]
+            bg-white
+          "
+        />
+      </div>
+
+      {/* ====================================================== */}
+      {/* SOFT GREEN GLOW */}
       {/* ====================================================== */}
 
       <motion.div
@@ -30,47 +74,16 @@ export default function ProjectCardCurrent({ project }) {
           pointer-events-none
           absolute
           -inset-[3px]
+          -z-10
           rounded-[1.65rem]
-
-          bg-gradient-to-br
-          from-violet-500
-          via-indigo-400
-          to-violet-500
-
-          blur-[7px]
+          bg-emerald-500
+          blur-[8px]
         "
         animate={{
-          opacity: [0.16, 0.42, 0.16],
+          opacity: [0.08, 0.22, 0.08],
         }}
         transition={{
           duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* ====================================================== */}
-      {/* ANIMATED BORDER */}
-      {/* ====================================================== */}
-
-      <motion.div
-        className="
-          pointer-events-none
-          absolute
-          -inset-[2px]
-          rounded-[1.65rem]
-          border-2
-          border-violet-400/60
-        "
-        animate={{
-          borderColor: [
-            "rgba(139,92,246,0.40)",
-            "rgba(99,102,241,0.90)",
-            "rgba(139,92,246,0.40)",
-          ],
-        }}
-        transition={{
-          duration: 2.8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -83,6 +96,7 @@ export default function ProjectCardCurrent({ project }) {
       <motion.div
         className="
           relative
+          z-10
           h-full
           overflow-hidden
           rounded-[1.6rem]
@@ -109,30 +123,22 @@ export default function ProjectCardCurrent({ project }) {
             left-3
             top-[162px]
             z-30
-
             flex
             items-center
             gap-2
-
             whitespace-nowrap
             rounded-full
-
             border
             border-white/70
-
             bg-white/95
-
             px-3
             py-1.5
-
             text-[9px]
             font-bold
             uppercase
             tracking-[0.06em]
-            text-violet-700
-
+            text-emerald-700
             shadow-[0_6px_18px_rgba(15,23,42,0.12)]
-
             backdrop-blur-md
           "
           animate={{
@@ -146,7 +152,6 @@ export default function ProjectCardCurrent({ project }) {
         >
           {/* Live indicator */}
           <span className="relative flex h-2 w-2">
-
             <span
               className="
                 absolute
@@ -170,15 +175,11 @@ export default function ProjectCardCurrent({ project }) {
                 bg-emerald-500
               "
             />
-
           </span>
 
           Currently in Development
-
         </motion.div>
-
       </motion.div>
-
     </motion.div>
   );
 }
