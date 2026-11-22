@@ -35,7 +35,7 @@ const projects = [
       "yfinance",
     ],
 
-    githubUrl: null,
+    githubUrl: "https://github.com/Deeghau0816/Verity.git",
 
     isUni: false,
     isCurrent: true,
