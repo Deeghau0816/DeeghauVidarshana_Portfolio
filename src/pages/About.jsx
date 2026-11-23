@@ -16,6 +16,11 @@ import {
   Server,
   Cloud,
   MonitorSmartphone,
+  Bot,
+  Search,
+  ShieldCheck,
+  TrendingUp,
+  Factory,
 } from "lucide-react";
 
 const fadeUp = {
@@ -45,21 +50,21 @@ export default function About() {
           className="mb-10"
         >
           <p className="text-sm font-medium tracking-wide text-slate-700">
-            ABOUT • DATA SCIENCE • SOFTWARE ENGINEERING • AI
+            ABOUT • AI & MACHINE LEARNING • DATA SCIENCE • SOFTWARE ENGINEERING
           </p>
 
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            Building at the intersection of{" "}
+            Engineering{" "}
             <span className="text-indigo-700">
-              Data Science
+              AI & Machine Learning
             </span>
-            ,{" "}
+            {" "}systems, backed by{" "}
             <span className="text-blue-700">
-              Software Engineering
+              Data Science
             </span>
             {" & "}
             <span className="text-cyan-700">
-              Intelligent Systems
+              Software Engineering
             </span>
             .
           </h1>
@@ -69,22 +74,29 @@ export default function About() {
             <span className="font-medium text-slate-900">
               Data Science
             </span>
-            , with industry experience as a{" "}
+            , focused on building{" "}
+            <span className="font-medium text-slate-900">
+              AI and machine learning systems
+            </span>
+            {" "}that work on real data. I bring industry experience as a{" "}
             <span className="font-medium text-slate-900">
               Data Analyst Intern at Michelin Lanka
             </span>
-            . My technical background spans both Data Science and Software
-            Engineering, allowing me to work from raw data and analytical
-            requirements all the way to complete software systems.
+            , where I build Power BI dashboards and Power Automate workflows
+            and develop a predictive machine learning model for tyre defect
+            analysis.
 
             <br />
             <br />
 
-            On the data side, I work with analytics, Power BI, Python, SQL,
-            machine learning, data workflows, databases, and data platforms.
-            On the software engineering side, I build full-stack applications,
-            backend services, REST APIs, database-driven systems, and modern
-            responsive web applications.
+            On the AI side, I work with machine learning, predictive and
+            time-series modelling, agentic and multi-agent systems,
+            LLM-based applications with retrieval (RAG), and Explainable AI.
+            On the data side, I work with analytics, Power BI, Power
+            Automate, Python, SQL, data workflows, databases, and data
+            platforms. On the software engineering side, I build full-stack
+            applications, backend services, REST APIs, database-driven
+            systems, and modern responsive web applications.
 
             <br />
             <br />
@@ -103,9 +115,9 @@ export default function About() {
 
             I’m especially interested in{" "}
             <span className="font-medium text-slate-900">
-              Machine Learning, Explainable AI, Software Engineering, Data
-              Engineering, Big Data, intelligent applications, and
-              decision-support systems
+              Machine Learning, Agentic AI, Explainable AI, Software
+              Engineering, Data Engineering, Big Data, intelligent
+              applications, and decision-support systems
             </span>
             . My long-term direction is to combine strong engineering with
             data and AI to build scalable systems that solve meaningful
@@ -130,7 +142,7 @@ export default function About() {
 
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1">
               <Sparkles className="h-4 w-4 text-slate-600" />
-              Data • Software • AI
+              AI • ML • Data • Software
             </span>
 
           </div>
@@ -143,16 +155,37 @@ export default function About() {
 
             <RoleChip
               icon={
-                <BarChart3 className="h-4 w-4" />
+                <Bot className="h-4 w-4" />
               }
-              text="Data Analytics"
+              text="AI & Agentic Systems"
             />
 
             <RoleChip
               icon={
                 <Brain className="h-4 w-4" />
               }
-              text="Data Science & ML"
+              text="Machine Learning"
+            />
+
+            <RoleChip
+              icon={
+                <ShieldCheck className="h-4 w-4" />
+              }
+              text="Explainable AI"
+            />
+
+            <RoleChip
+              icon={
+                <TrendingUp className="h-4 w-4" />
+              }
+              text="Forecasting & Predictive ML"
+            />
+
+            <RoleChip
+              icon={
+                <BarChart3 className="h-4 w-4" />
+              }
+              text="Data Analytics"
             />
 
             <RoleChip
@@ -186,14 +219,6 @@ export default function About() {
             <RoleChip
               tone="learning"
               icon={
-                <Sparkles className="h-4 w-4" />
-              }
-              text="AI & Intelligent Systems"
-            />
-
-            <RoleChip
-              tone="learning"
-              icon={
                 <Cloud className="h-4 w-4" />
               }
               text="Cloud & Data Engineering"
@@ -201,6 +226,256 @@ export default function About() {
 
           </div>
 
+        </motion.div>
+
+        {/* ======================================================= */}
+        {/* AI & MACHINE LEARNING (FEATURED)                        */}
+        {/* ======================================================= */}
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: true,
+            amount: 0.1,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          className="
+            mb-10
+            overflow-hidden
+            rounded-3xl
+            border border-indigo-100
+            bg-white/70
+            shadow-sm
+            backdrop-blur-md
+          "
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-indigo-600 via-fuchsia-500 to-cyan-500" />
+
+          <div className="p-6 md:p-8">
+
+            <div className="max-w-3xl">
+
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-700">
+                AI & Machine Learning
+              </p>
+
+              <h2 className="mt-2 text-2xl font-bold text-slate-900 md:text-3xl">
+                AI that reasons, retrieves, explains, and works on real data
+              </h2>
+
+              <p className="mt-3 leading-relaxed text-slate-700">
+                AI is shifting from models that only predict to systems that
+                understand requests, retrieve knowledge, take action, and
+                explain their decisions. My work follows that shift: agentic
+                and LLM-based systems, predictive modelling on industrial and
+                financial data, and Explainable AI that people can trust.
+              </p>
+
+            </div>
+
+            {/* =================================================== */}
+            {/* TREND TAGS                                          */}
+            {/* =================================================== */}
+
+            <div className="mt-5 flex flex-wrap gap-2">
+
+              <Pill>Agentic AI</Pill>
+
+              <Pill>Multi-Agent Systems</Pill>
+
+              <Pill>LLMs & NLP</Pill>
+
+              <Pill>RAG</Pill>
+
+              <Pill>Explainable AI</Pill>
+
+              <Pill>Responsible AI</Pill>
+
+              <Pill>Human-in-the-Loop</Pill>
+
+              <Pill>Predictive ML</Pill>
+
+              <Pill>Time-Series Forecasting</Pill>
+
+            </div>
+
+            {/* =================================================== */}
+            {/* AI FOCUS AREAS                                      */}
+            {/* =================================================== */}
+
+            <div className="mt-7 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+              <ReadyCard
+                badge="Project Experience"
+                title="Agentic & Multi-Agent AI"
+                icon={
+                  <Bot className="h-4 w-4 text-indigo-700" />
+                }
+                points={[
+                  "Multi-agent workflows with clearly defined roles",
+                  "Agent coordination over REST APIs",
+                  "Human-approved escalation and decision logic",
+                  "Designing agent frameworks inspired by human cognition",
+                ]}
+              />
+
+              <ReadyCard
+                badge="Project Experience"
+                title="LLMs, NLP & RAG"
+                icon={
+                  <Search className="h-4 w-4 text-blue-700" />
+                }
+                points={[
+                  "LLM-based intent and entity extraction",
+                  "Retrieval-augmented generation over knowledge bases",
+                  "Information retrieval and web analytics foundations",
+                  "Structured self-learning in ML and LLMs",
+                ]}
+              />
+
+              <ReadyCard
+                badge="Growing Specialization"
+                title="Explainable & Responsible AI"
+                icon={
+                  <ShieldCheck className="h-4 w-4 text-emerald-700" />
+                }
+                points={[
+                  "Explainable risk indicators in decision systems",
+                  "Human-in-the-loop, transparent decisions",
+                  "Interpreting model behaviour beyond accuracy scores",
+                  "Trustworthy, data-driven decision making",
+                ]}
+              />
+
+              <ReadyCard
+                badge="Industry Experience"
+                title="Predictive ML in Industry"
+                icon={
+                  <Factory className="h-4 w-4 text-cyan-700" />
+                }
+                points={[
+                  "Predictive model for tyre defect analysis",
+                  "Preprocessing, feature engineering, and training",
+                  "Evaluation with ROC AUC and feature importance",
+                  "Model pipelines built in Dataiku",
+                ]}
+              />
+
+              <ReadyCard
+                badge="Project Experience"
+                title="Time-Series & Forecasting"
+                icon={
+                  <TrendingUp className="h-4 w-4 text-violet-700" />
+                }
+                points={[
+                  "Real-time ensemble stock forecasting (StockFlux)",
+                  "Financial APIs and time-series analysis",
+                  "Ensemble modelling and model comparison",
+                  "New forecasting pipeline in design (Verity)",
+                ]}
+              />
+
+              <ReadyCard
+                badge="Project Experience"
+                title="Machine Learning & Data Mining"
+                icon={
+                  <Brain className="h-4 w-4 text-fuchsia-700" />
+                }
+                points={[
+                  "End-to-end data mining workflow: validation, EDA, modelling",
+                  "Classification and clustering",
+                  "Model evaluation, tuning, and experimentation",
+                  "Prediction systems with backend and frontend",
+                ]}
+              />
+
+            </div>
+
+            {/* =================================================== */}
+            {/* SELECTED AI WORK                                    */}
+            {/* =================================================== */}
+
+            <div className="mt-8">
+
+              <h3 className="text-lg font-semibold text-slate-900">
+                Selected AI & ML work
+              </h3>
+
+              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                <MiniCard
+                  icon={
+                    <Brain className="h-5 w-5 text-fuchsia-700" />
+                  }
+                  title="AI & Machine Learning"
+                  desc="Building and evaluating machine learning models, agentic and LLM-based systems, and predictive solutions on real data, while exploring Explainable AI, responsible AI, and decision-support systems."
+                />
+
+                <MiniCard
+                  icon={
+                    <Bot className="h-5 w-5 text-indigo-700" />
+                  }
+                  title="BankGuard AI"
+                  desc="A 4-agent banking system that helps customers investigate suspicious transactions: it understands the request, analyses risk with explainable indicators, retrieves banking knowledge, and escalates to a support ticket with customer approval. Team project built with Python, FastAPI, React, and MongoDB."
+                />
+
+                <MiniCard
+                  icon={
+                    <TrendingUp className="h-5 w-5 text-blue-700" />
+                  }
+                  title="StockFlux"
+                  desc="Real-time ensemble machine learning stock forecasting using financial APIs and time-series analysis."
+                />
+
+                <MiniCard
+                  icon={
+                    <Factory className="h-5 w-5 text-cyan-700" />
+                  }
+                  title="Tyre Defect Prediction"
+                  desc="A predictive machine learning model built during my Michelin Lanka internship to understand and predict tyre defects: preprocessing, feature engineering, training, and evaluation in Dataiku."
+                />
+
+                <MiniCard
+                  icon={
+                    <Sparkles className="h-5 w-5 text-violet-700" />
+                  }
+                  title="Verity"
+                  desc="A new forecasting pipeline project, currently in design and setup."
+                />
+
+              </div>
+
+            </div>
+
+            {/* =================================================== */}
+            {/* AI CLOSING LINE                                     */}
+            {/* =================================================== */}
+
+            <div
+              className="
+                mt-7
+                rounded-2xl
+                border border-indigo-100
+                bg-gradient-to-r
+                from-indigo-50/90
+                via-white/80
+                to-cyan-50/90
+                px-5
+                py-4
+              "
+            >
+              <p className="text-center font-medium text-slate-800">
+                Data and software are how I make AI usable — the goal is
+                intelligent systems that are reliable, explainable, and
+                useful in the real world.
+              </p>
+            </div>
+
+          </div>
         </motion.div>
 
         {/* ======================================================= */}
@@ -267,7 +542,7 @@ export default function About() {
                     <BarChart3 className="h-5 w-5 text-indigo-700" />
                   }
                   title="Data Analytics & BI"
-                  desc="Exploratory analysis, KPI development, Power BI dashboards, reporting, data preparation, and turning business requirements into actionable insights."
+                  desc="Exploratory analysis, KPI development, Power BI dashboards, Power Automate workflows, reporting, data preparation, and turning business requirements into actionable insights."
                 />
 
                 <MiniCard
@@ -302,14 +577,6 @@ export default function About() {
                   desc="Working with PostgreSQL, MongoDB, SQL, APIs, structured data, migrations, automated workflows, and scalable data-processing concepts."
                 />
 
-                <MiniCard
-                  icon={
-                    <Brain className="h-5 w-5 text-fuchsia-700" />
-                  }
-                  title="Machine Learning & AI"
-                  desc="Developing and evaluating machine learning solutions while exploring Explainable AI, responsible AI, intelligent agents, and decision-support systems."
-                />
-
               </div>
 
               {/* ================================================= */}
@@ -331,6 +598,20 @@ export default function About() {
                 <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
 
                   <ReadyCard
+                    badge="Growing Specialization"
+                    title="AI & Machine Learning"
+                    icon={
+                      <Brain className="h-4 w-4 text-fuchsia-700" />
+                    }
+                    points={[
+                      "Machine learning and predictive modelling workflows",
+                      "Agentic and LLM-based systems",
+                      "Model evaluation and experimentation",
+                      "Explainable AI and intelligent systems",
+                    ]}
+                  />
+
+                  <ReadyCard
                     badge="Industry Experience"
                     title="Data Analytics & BI"
                     icon={
@@ -338,9 +619,9 @@ export default function About() {
                     }
                     points={[
                       "Exploratory analysis and data preparation",
-                      "Power BI dashboards and reporting",
-                      "Business KPI and trend analysis",
-                      "Translating requirements into measurable insights",
+                      "Power BI dashboards, KPI and trend reporting across plants",
+                      "Power Automate workflows and automated data refresh",
+                      "Predictive ML for manufacturing quality analysis",
                     ]}
                   />
 
@@ -355,20 +636,6 @@ export default function About() {
                       "Frontend and backend architecture",
                       "REST APIs and database-driven systems",
                       "Git-based team and individual development",
-                    ]}
-                  />
-
-                  <ReadyCard
-                    badge="Growing Specialization"
-                    title="Machine Learning & AI"
-                    icon={
-                      <Brain className="h-4 w-4 text-fuchsia-700" />
-                    }
-                    points={[
-                      "Machine learning workflows",
-                      "Classification and clustering",
-                      "Model evaluation and experimentation",
-                      "Explainable AI and intelligent systems",
                     ]}
                   />
 
@@ -403,18 +670,33 @@ export default function About() {
                 <ul className="mt-4 space-y-3">
 
                   <TimelineItem
+                    title="Building agentic AI systems"
+                    desc="Working on BankGuard AI as part of a four-person team: a multi-agent banking system combining LLM-based understanding, explainable risk analysis, retrieval over a knowledge base, and human-approved escalation, built with Python, FastAPI, React, and MongoDB."
+                  />
+
+                  <TimelineItem
+                    title="Building a predictive model for tyre defect analysis"
+                    desc="Developing and improving a machine learning model on manufacturing data in Dataiku, covering preprocessing, feature engineering, model training, and evaluation to understand and predict tyre defects."
+                  />
+
+                  <TimelineItem
+                    title="Advancing in Machine Learning, LLMs & Data Science"
+                    desc="Strengthening my understanding of machine learning, LLMs, data mining, optimization, model evaluation, Explainable AI, and responsible data-driven decision making."
+                  />
+
+                  <TimelineItem
+                    title="Designing a new forecasting pipeline"
+                    desc="Setting up Verity, a forecasting pipeline project that builds on my work with real-time ensemble forecasting in StockFlux."
+                  />
+
+                  <TimelineItem
                     title="Applying Data Analytics in industry"
-                    desc="Working as a Data Analyst Intern at Michelin Lanka and gaining practical experience with business analytics, reporting, dashboards, automation, data workflows, and decision-support requirements."
+                    desc="Completing my Data Analyst Intern role at Michelin Lanka (through December 2026), building Power BI dashboards, Power Automate workflows, and automated data syncing with Office Scripts and Power Query for multi-plant reporting."
                   />
 
                   <TimelineItem
                     title="Building production-style software projects"
                     desc="Developing full-stack applications with React, TypeScript, FastAPI, PostgreSQL, MongoDB, REST APIs, authentication, Git, and modern software engineering practices."
-                  />
-
-                  <TimelineItem
-                    title="Advancing in Machine Learning & Data Science"
-                    desc="Strengthening my understanding of machine learning, data mining, optimization, model evaluation, Explainable AI, and responsible data-driven decision making."
                   />
 
                   <TimelineItem
@@ -489,6 +771,12 @@ export default function About() {
                   <Pill>Python</Pill>
 
                   <Pill>Machine Learning</Pill>
+
+                  <Pill>Agentic AI</Pill>
+
+                  <Pill>LLMs & RAG</Pill>
+
+                  <Pill>Explainable AI</Pill>
 
                   <Pill>Data Mining</Pill>
 
@@ -647,6 +935,10 @@ export default function About() {
 
                   <Pill>Power BI</Pill>
 
+                  <Pill>Power Automate</Pill>
+
+                  <Pill>Dataiku</Pill>
+
                   <Pill>Git</Pill>
 
                   <Pill>GitHub</Pill>
@@ -704,7 +996,8 @@ export default function About() {
 
                   <Bullet color="bg-cyan-600">
                     I can move from raw data to analysis, dashboards, machine
-                    learning, APIs, and usable applications.
+                    learning, agentic and LLM-based systems, APIs, and usable
+                    applications.
                   </Bullet>
 
                   <Bullet color="bg-fuchsia-600">
